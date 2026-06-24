@@ -15,6 +15,30 @@ body {
   color: transparent;
 }
 
+.text-casino-gold {
+  color: #c5a880;
+}
+
+.bg-casino-gold {
+  background-color: #c5a880;
+}
+
+.hover\:text-casino-gold:hover {
+  color: #c5a880;
+}
+
+.bg-casino-gold\/5 {
+  background-color: rgba(197, 168, 128, 0.05);
+}
+
+.group:hover .group-hover\:bg-casino-gold\/10 {
+  background-color: rgba(197, 168, 128, 0.1);
+}
+
+.hover\:border-casino-gold\/30:hover {
+  border-color: rgba(197, 168, 128, 0.3);
+}
+
 .casino-card {
   background: rgba(20, 20, 20, 0.92);
   border: 1px solid rgba(197, 168, 128, 0.18);
@@ -26,6 +50,15 @@ body {
   border-color: rgba(197, 168, 128, 0.75);
   transform: translateY(-8px);
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.85), 0 0 22px rgba(197, 168, 128, 0.16);
+}
+
+.linked-card {
+  cursor: pointer;
+}
+
+.linked-card:focus-visible {
+  outline: 2px solid #c5a880;
+  outline-offset: 4px;
 }
 
 .img-overlay {

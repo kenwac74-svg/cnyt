@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CNYT (HCF) Integrated Business Whitepaper v2.0</title>
+    
+    <!-- Google Fonts & FontAwesome -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@300;400;500;700;900&family=Noto+Serif:wght@400;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        /* Print & Base Setup */
+        :root {
+            --bg-base: #0a0a0a;
+            --bg-alt: #141414;
+            --gold: #c5a880;
+            --text-main: #e5e5e5;
+            --text-sub: #a3a3a3;
+            --border: #262626;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            background-color: #000;
+            font-family: 'Noto Sans', sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+            padding: 20px 0;
+            margin: 0;
+            color: var(--text-sub);
+            -webkit-print-color-adjust: exact !important;
+            print-color-adjust: exact !important;
+        }
+
+        @media print {
+            body { padding: 0; gap: 0; background-color: var(--bg-base); }
+            @page { size: 16in 9in; margin: 0; }
+            .slide { 
+                page-break-after: always; 
+                margin: 0 !important; 
+                border: none !important; 
+                border-radius: 0 !important; 
+                box-shadow: none !important; 
+            }
+        }
+
+        /* Slide Structure */
+        .slide {
+            width: 1280px;
+            height: 720px;
+            background-color: var(--bg-base);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.8);
+            display: flex;
+            flex-direction: column;
+            padding: 60px;
+            position: relative;
+            overflow: hidden;
+            box-sizing: border-box;
+        }
+
+        /* Typography */
+        h1, h2, h3, h4, .font-serif { 
+            font-family: 'Noto Serif', serif; 
+            color: var(--text-main); 
+            word-break: keep-all; 
+            margin: 0; 
+        }
+        
+        p, li, td, th { 
+            font-size: 20px; 
+            line-height: 1.6; 
+            word-break: keep-all; 
+            margin: 0; 
+        }
+        
+        .slide-title {
+            font-size: 38px;
+            font-weight: 900;
+            margin-bottom: 40px;
+            border-bottom: 2px solid var(--gold);
+            padding-bottom: 10px;
+            display: inline-block;
+            width: 100%;
+            letter-spacing: -1px;
+        }
+
+        /* Layout Utilities */
+        .flex { display: flex; }
+        .flex-col { flex-direction: column; }
+        .flex-1 { flex: 1; }
+        .items-center { align-items: center; }
+        .justify-center { justify-content: center; }
+        .text-center { text-align: center; }
+        .relative { position: relative; }
+        .absolute { position: absolute; }
+        .z-10 { z-index: 10; }
+        .gap-6 { gap: 24px; }
+        .gap-8 { gap: 32px; }
+        .gap-12 { gap: 48px; }
+        .mb-4 { margin-bottom: 16px; }
+        .mb-6 { margin-bottom: 24px; }
+        .mb-8 { margin-bottom: 32px; }
+        .mb-10 { margin-bottom: 40px; }
+        .mt-4 { margin-top: 16px; }
+        .mt-6 { margin-top: 24px; }
+        .mt-8 { margin-top: 32px; }
+        .mt-16 { margin-top: 64px; }
+        .p-6 { padding: 24px; }
+        .p-8 { padding: 32px; }
+        .p-10 { padding: 40px; }
+        .w-full { width: 100%; }
+
+        /* Grid */
+        .grid { display: grid; }
+        .grid-cols-2 { grid-template-columns: repeat(2, 1fr); }
+        .grid-cols-3 { grid-template-columns: repeat(3, 1fr); }
+
+        /* Colors */
+        .text-gold { color: var(--gold); }
+        .bg-gold { background-color: var(--gold); }
+        .text-main { color: var(--text-main); }
+
+        /* Background Pattern */
+        .bg-pattern { 
+            background-image: radial-gradient(var(--gold) 1px, transparent 1px); 
+            background-size: 30px 30px; 
+            opacity: 0.05; 
+        }
+
+        /* Box Styles */
+        .box {
+            background-color: var(--bg-alt);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+        }
+
+        .box-gold-border {
+            background-color: var(--bg-alt);
+            border-left: 4px solid var(--gold);
+        }
+
+        /* Table */
+        .table-custom { 
+            width: 100%; 
+            border-collapse: collapse; 
+        }
+        
+        .table-custom th, .table-custom td { 
+            border-bottom: 1px solid var(--border); 
+            padding: 22px 24px; 
+            text-align: left; 
+        }
+        
+        .table-custom th { 
+            background-color: var(--bg-alt); 
+            color: var(--gold); 
+            font-weight: 700; 
+        }
+        
+        .table-custom tr:last-child td { 
+            border-bottom: none; 
+        }
+
+        /* Stats Card */
+        .stat-card {
+            background-color: var(--bg-alt);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 24px;
+            text-align: center;
+        }
+
+        .stat-number {
+            font-size: 48px;
+            font-weight: 900;
+            color: var(--gold);
+            margin-bottom: 8px;
+            display: block;
+        }
+
+        .stat-label {
+            font-size: 18px;
+            color: var(--text-sub);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        /* Feature Box */
+        .feature-box {
+            background-color: var(--bg-alt);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 24px;
+        }
+
+        .feature-title {
+            font-size: 22px;
+            font-weight: 700;
+            color: var(--gold);
+            margin-bottom: 16px;
+            display: flex;
+            align-items: center;
+        }
+
+        .feature-title i {
+            margin-right: 12px;
+        }
+
+        /* List */
+        ul.icon-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        ul.icon-list li {
+            position: relative;
+            padding-left: 48px;
+            margin-bottom: 24px;
+        }
+
+        ul.icon-list li i {
+            position: absolute;
+            left: 0;
+            top: 4px;
+            font-size: 28px;
+            color: var(--gold);
+        }
+
+        /* Timeline */
+        .timeline-container {
+            display: flex;
+            align-items: center;
+            width: 100%;
+            position: relative;
+            padding-top: 40px;
+        }
+
+        .timeline-line { 
+            background-color: var(--border); 
+            height: 4px; 
+            width: 100%; 
+            position: absolute; 
+            top: 50%; 
+            transform: translateY(-2px); 
+            z-index: 0; 
+        }
+
+        .timeline-item {
+            width: 25%;
+            position: relative;
+            text-align: center;
+        }
+
+        .timeline-node { 
+            width: 20px; 
+            height: 20px; 
+            background: var(--bg-base); 
+            border: 4px solid var(--gold); 
+            border-radius: 50%; 
+            position: absolute; 
+            left: 50%; 
+            top: 50%; 
+            transform: translate(-50%, -50%); 
+            z-index: 1; 
+        }
+
+        .timeline-card {
+            background-color: var(--bg-alt);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 24px;
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 90%;
+        }
+
+        .timeline-card.top {
+            top: 40px;
+        }
+
+        .timeline-card.bottom {
+            bottom: 40px;
+        }
+
+        .timeline-title {
+            font-size: 20px;
+            font-weight: 700;
+            color: var(--text-main);
+            margin-bottom: 8px;
+        }
+
+        .timeline-desc {
+            font-size: 16px;
+        }
+
+        /* Pie Chart */
+        .pie-chart {
+            width: 360px;
+            height: 360px;
+            border-radius: 50%;
+            background: conic-gradient(
+                var(--gold) 0% 40%,
+                #404040 40% 70%,
+                #1f1f1f 70% 100%
+            );
+        }
+
+        .legend-item {
+            display: flex;
+            align-items: center;
+            font-size: 22px;
+            font-weight: 700;
+            color: var(--text-main);
+            margin-bottom: 32px;
+        }
+
+        .legend-color {
+            width: 24px;
+            height: 24px;
+            border-radius: 4px;
+            margin-right: 16px;
+        }
+
+        /* Quote */
+        .quote-container {
+            width: 85%;
+            text-align: center;
+            position: relative;
+            padding: 0 40px;
+        }
+
+        .quote-mark-open {
+            position: absolute;
+            left: -20px;
+            top: 10px;
+            font-size: 100px;
+            color: var(--border);
+            font-family: sans-serif;
+            line-height: 1;
+        }
+
+        .quote-mark-close {
+            position: absolute;
+            right: -20px;
+            bottom: -40px;
+            font-size: 100px;
+            color: var(--border);
+            font-family: sans-serif;
+            line-height: 1;
+        }
+
+        .quote-text {
+            font-size: 32px;
+            font-weight: 900;
+            color: var(--text-main);
+            font-family: 'Noto Serif', serif;
+            line-height: 1.6;
+            margin-bottom: 40px;
+            position: relative;
+            z-index: 10;
+        }
+
+        .quote-author {
+            font-size: 20px;
+            font-weight: 700;
+            color: var(--gold);
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        /* Cover Specific */
+        .cover-title {
+            font-size: 80px;
+            font-weight: 900;
+            margin-bottom: 24px;
+            color: var(--gold);
+            font-family: 'Noto Serif', serif;
+            letter-spacing: -2px;
+        }
+
+        .cover-subtitle {
+            font-size: 32px;
+            font-weight: 700;
+            color: var(--text-main);
+            margin-bottom: 40px;
+        }
+
+        .cover-org {
+            font-size: 24px;
+            color: var(--text-sub);
+            letter-spacing: 4px;
+            text-transform: uppercase;
+        }
+
+        .cover-footer {
+            margin-top: 64px;
+            border-top: 1px solid var(--border);
+            padding-top: 32px;
+        }
+
+        .cover-date {
+            font-size: 18px;
+            color: #666;
+        }
+
+        /* Text Sizes */
+        .text-lg { font-size: 22px; line-height: 1.7; }
+        .text-xl { font-size: 24px; }
+        .text-2xl { font-size: 26px; }
+        strong { color: var(--text-main); }
+    </style>
+
+    <style>
+      .small { font-size: 16px; line-height: 1.55; }
+      .tiny { font-size: 14px; line-height: 1.45; }
+      .kicker { font-size: 16px; letter-spacing: 2px; text-transform: uppercase; color: var(--gold); font-weight: 700; margin-bottom: 12px; }
+      .pill { display:inline-block; padding:8px 14px; border:1px solid var(--border); border-radius:999px; background:var(--bg-alt); color:var(--text-main); font-size:15px; margin:4px; }
+      .two-col { display:grid; grid-template-columns:1fr 1fr; gap:28px; }
+      .three-col { display:grid; grid-template-columns:repeat(3,1fr); gap:24px; }
+      .note { border-left:4px solid var(--gold); padding:18px 22px; background:var(--bg-alt); font-size:17px; line-height:1.55; }
+      .slide-footer { position:absolute; bottom:20px; left:60px; right:60px; display:flex; justify-content:space-between; font-size:12px; color:#666; }
+      .compact-table th, .compact-table td { padding:12px 14px; font-size:15px; line-height:1.35; }
+      .compact-list li { margin-bottom:10px !important; font-size:17px; line-height:1.45; }
+    </style>
+</head>
+<body>
+<div class="slide" style="justify-content:center;align-items:center;text-align:center;">
+<div class="absolute" style="inset:0;background-image:radial-gradient(#c5a880 1px,transparent 1px);background-size:30px 30px;opacity:.05"></div>
+<div class="relative z-10"><div class="kicker">Horizon Capital Foundation</div><h1 class="cover-title">CNYT</h1>
+<p class="cover-subtitle">Casino Network Yield Token</p><p class="cover-org">Integrated Business Whitepaper</p>
+<div class="cover-footer"><p class="cover-date">Version 2.0 Draft · June 2026</p></div></div></div>
+<div class="slide" ><h2 class="slide-title">CONTENTS</h2><div class="two-col flex-1">
+<div class="box p-6"><p class="small"><b class="text-main">01</b> Executive Summary<br><b class="text-main">02</b> Project Structure<br><b class="text-main">03</b> Development History<br><b class="text-main">04</b> Asset Network & Value Scope<br><b class="text-main">05</b> CNYT Tokenomics<br><b class="text-main">06</b> LONGRISE Allocation<br><b class="text-main">07</b> Member Buyback & Lock-up<br><b class="text-main">08</b> Internal P2P Market<br><b class="text-main">09</b> CND Design</p></div>
+<div class="box p-6"><p class="small"><b class="text-main">10</b> CNYT-to-CND Conversion<br><b class="text-main">11</b> Reserve Framework<br><b class="text-main">12</b> Privacy Architecture<br><b class="text-main">13</b> CNYT Staking & Distributions<br><b class="text-main">14</b> Governance<br><b class="text-main">15</b> Valuation, Disclosure & Audit<br><b class="text-main">16</b> Roadmap<br><b class="text-main">17</b> Risk Factors<br><b class="text-main">18</b> Legal Disclaimer</p></div></div><div class="slide-footer"><span>CNYT / HCF BUSINESS WHITEPAPER</span><span>2</span></div></div>
+<div class="slide" ><h2 class="slide-title">01. Executive Summary</h2><div class="flex-1 flex flex-col justify-center">
+<p class="text-lg mb-6">CNYT is a <strong>security token</strong> created to structure capital and economic rights contributed toward the future issuance and operation of CND, a privacy-preserving casino exchange and settlement token.</p>
+<div class="three-col mb-6"><div class="stat-card"><span class="stat-number">1B</span><div class="stat-label">Total Supply</div></div><div class="stat-card"><span class="stat-number">$0.01</span><div class="stat-label">Initial Reference Price</div></div><div class="stat-card"><span class="stat-number">$1.00</span><div class="stat-label">Long-Term Strategic Target</div></div></div>
+<div class="note">CNYT does not tokenize the entire casino investment network. Only capital, contractual rights, operating interests, and reserve assets expressly allocated to the CNYT–CND ecosystem are included.</div></div><div class="slide-footer"><span>CNYT / HCF BUSINESS WHITEPAPER</span><span>3</span></div></div>
+<div class="slide" ><h2 class="slide-title">02. Project Structure</h2><div class="grid grid-cols-2 gap-8 flex-1">
+<div class="box p-8"><h3 class="text-2xl text-main mb-6">CNYT</h3><p class="small">Private-equity-oriented security token used to structure contributions for CND development, reserve formation, technology, operations, and ecosystem expansion.</p><p class="small mt-4"><strong>Economic right:</strong> eligible stakers may receive quarterly CND distributions funded by a defined share of net CND operating fees.</p></div>
+<div class="box p-8"><h3 class="text-2xl text-main mb-6">CND</h3><p class="small">USD-referenced, mixed-collateral casino exchange and settlement token intended for conversion into local currency, casino chips, and approved ecosystem services.</p><p class="small mt-4"><strong>Revenue model:</strong> casino exchange, payment, and settlement fees, which may reach double-digit percentages in selected channels.</p></div></div><div class="slide-footer"><span>CNYT / HCF BUSINESS WHITEPAPER</span><span>4</span></div></div>
+<div class="slide" ><h2 class="slide-title">03. Development History</h2><div class="flex-1 flex flex-col justify-center"><div class="box p-8 mb-6">
+<p class="text-xl"><strong>October 2024</strong> — CNYT was initially generated with a fixed total supply of 1,000,000,000 tokens, based on an early plan to tokenize selected casino-related interests and finance the future CND ecosystem.</p></div>
+<div class="box p-8 mb-6"><p class="text-xl"><strong>December 15, 2024</strong> — 50% of total supply was allocated to LONGRISE AI as the exclusive member ecosystem distribution pool.</p></div>
+<div class="note">Earlier references to a 10,000,000,000-token supply, a 2026 TGE, and $100M+ in currently verified collateral appeared only in abandoned prototype materials and do not describe the actual issued token.</div></div><div class="slide-footer"><span>CNYT / HCF BUSINESS WHITEPAPER</span><span>5</span></div></div>
+<div class="slide" ><h2 class="slide-title">04. Asset Network & Value Scope</h2><div class="three-col mb-8"><div class="stat-card"><span class="stat-number">~$700M</span><div class="stat-label">Broader Casino Network Assets</div></div><div class="stat-card"><span class="stat-number">$10M</span><div class="stat-label">Initial CNYT Reference Value</div></div><div class="stat-card"><span class="stat-number">$100M+</span><div class="stat-label">Target Ecosystem Value at Scale</div></div></div>
+<ul class="icon-list compact-list"><li><i class="fa-solid fa-network-wired"></i><strong>USD 700M:</strong> the broader investment network’s deployed gaming-related assets, not the CND reserve.</li><li><i class="fa-solid fa-coins"></i><strong>USD 10M:</strong> 1B CNYT × $0.01 initial reference value.</li><li><i class="fa-solid fa-chart-line"></i><strong>USD 100M+:</strong> a future enterprise-value objective from CND exchange, payment, settlement, reserve growth, and network expansion—not current collateral or guaranteed value.</li></ul><div class="slide-footer"><span>CNYT / HCF BUSINESS WHITEPAPER</span><span>6</span></div></div>
+<div class="slide" id="tokenomics"><h2 class="slide-title">05. CNYT Tokenomics</h2><table class="table-custom compact-table"><thead><tr><th>Allocation</th><th>Share</th><th>Tokens</th><th>Purpose</th></tr></thead><tbody>
+<tr><td><strong>LONGRISE Member Ecosystem Pool</strong></td><td>50%</td><td>500,000,000</td><td>Performance-based member allocations, marketing, ecosystem growth</td></tr>
+<tr><td><strong>Existing Investors & Initial Capital Participants</strong></td><td>40%</td><td>400,000,000</td><td>Private capital and agreed economic participation</td></tr>
+<tr><td><strong>Foundation Operations & Reserve</strong></td><td>10%</td><td>100,000,000</td><td>Development, operations, audit, security, reserve and ecosystem infrastructure</td></tr></tbody></table>
+<div class="note mt-6">CNYT does not grant direct ownership of every casino asset. Only expressly contributed rights and assets are included in the CNYT–CND structure.</div><div class="slide-footer"><span>CNYT / HCF BUSINESS WHITEPAPER</span><span>7</span></div></div>
+<div class="slide" ><h2 class="slide-title">06. LONGRISE: Exclusive Participation Gateway</h2><div class="two-col flex-1"><div class="box p-8"><h3 class="text-xl text-gold mb-6">Role</h3><p class="small">LONGRISE AI is an online casino and auto-betting platform launched by HCF with investor approval. It is the sole current participation gateway for non-existing investors.</p><p class="small mt-4">No public sale, unrestricted airdrop, direct foundation subscription, or external retail-access channel is currently offered.</p></div>
+<div class="box p-8"><h3 class="text-xl text-gold mb-6">Member Allocation</h3><p class="small">CNYT allocations are determined by membership tier, platform tenure, auto-betting usage, transaction volume, referral activity, and ecosystem contribution.</p><p class="small mt-4">Distributions occur in phases and are governed by separate LONGRISE allocation policies.</p></div></div><div class="slide-footer"><span>CNYT / HCF BUSINESS WHITEPAPER</span><span>8</span></div></div>
+<div class="slide" ><h2 class="slide-title">07. Member Allocation, Buyback & 12-Month Lock</h2><div class="flex-1"><div class="three-col mb-8"><div class="feature-box"><h4 class="feature-title"><i class="fa-solid fa-gift"></i>1. Allocation</h4><p class="small">CNYT is credited based on eligible LONGRISE activity.</p></div><div class="feature-box"><h4 class="feature-title"><i class="fa-solid fa-clock"></i>2. Seven-Day Window</h4><p class="small">Members may resell internally or submit an irrevocable buyback request for USDT.</p></div><div class="feature-box"><h4 class="feature-title"><i class="fa-solid fa-lock"></i>3. Auto-Lock</h4><p class="small">Unsettled balances automatically enter the custodial pool and lock for 12 months.</p></div></div>
+<ul class="icon-list compact-list"><li><i class="fa-solid fa-money-bill-transfer"></i>LONGRISE announces one fixed buyback price before each seven-day cycle and accepts all eligible requests without quantity limits.</li><li><i class="fa-solid fa-coins"></i>Buybacks are funded from a designated portion of LONGRISE revenue and are intended to accumulate CNYT before CND launch.</li><li><i class="fa-solid fa-ban"></i>The 12-month pool pays no periodic reward and does not grant members direct CND conversion rights.</li></ul></div><div class="slide-footer"><span>CNYT / HCF BUSINESS WHITEPAPER</span><span>9</span></div></div>
+<div class="slide" ><h2 class="slide-title">08. Maturity, USDT Settlement & Recommitment</h2><div class="two-col flex-1"><div class="box p-8"><h3 class="text-xl text-main mb-6">At 12-Month Maturity</h3><p class="small">LONGRISE announces the applicable USDT conversion price before maturity. Members receive a 14-day election period to choose one of two outcomes:</p><p class="small mt-4"><strong>• Full USDT conversion and withdrawal</strong><br><strong>• Recommitment for a new 12-month cycle</strong></p></div>
+<div class="box p-8"><h3 class="text-xl text-main mb-6">Recovered CNYT</h3><p class="small">CNYT acquired through maturity settlement may be divided between LONGRISE’s strategic reserve pool and the member ecosystem distribution pool.</p><p class="small mt-4">LONGRISE publishes annual aggregate totals, while cycle-specific treasury allocations remain confidential.</p></div></div><div class="slide-footer"><span>CNYT / HCF BUSINESS WHITEPAPER</span><span>10</span></div></div>
+<div class="slide" ><h2 class="slide-title">09. Internal P2P Marketplace</h2><ul class="icon-list compact-list"><li><i class="fa-solid fa-users"></i>Current secondary trading is limited to eligible LONGRISE members through the internal P2P marketplace.</li><li><i class="fa-solid fa-scale-balanced"></i>LONGRISE publishes a reference price and a variable permitted trading range for each trading period.</li><li><i class="fa-solid fa-percent"></i>Seller-side fees apply; buyer-side transaction fees do not.</li><li><i class="fa-solid fa-hourglass-half"></i>Every P2P receipt creates a fresh seven-day grace period. The buyer may resell, request buyback, or allow automatic 12-month lock-up.</li><li><i class="fa-solid fa-shield-halved"></i>Wash trading, linked-account activity, circular transfers, abnormal orders, and artificial volume are monitored and may be restricted.</li><li><i class="fa-solid fa-id-card"></i>Daily and monthly limits vary by membership tier, platform history, usage, and risk indicators.</li></ul><div class="slide-footer"><span>CNYT / HCF BUSINESS WHITEPAPER</span><span>11</span></div></div>
+<div class="slide" ><h2 class="slide-title">10. Future External Trading</h2><div class="flex-1 flex flex-col justify-center"><p class="text-lg mb-8">The present closed-market structure reflects the project’s current operating stage and is <strong>not permanent</strong>.</p>
+<div class="box p-8"><p class="text-xl"><strong>Target exchange listing: June 2027</strong></p><p class="small mt-4">Subject to legal structuring, contract readiness, custody, liquidity, market-making, governance, and exchange requirements, CNYT may later become tradable through approved external exchanges.</p></div>
+<div class="note mt-8">Until listing, internal LONGRISE P2P trading remains the only secondary market.</div></div><div class="slide-footer"><span>CNYT / HCF BUSINESS WHITEPAPER</span><span>12</span></div></div>
+<div class="slide" ><h2 class="slide-title">11. CND Design</h2><div class="grid grid-cols-2 gap-8 flex-1"><div class="box p-8"><h3 class="text-xl text-gold mb-6">Value Reference</h3><p class="small">1 CND is designed to reference approximately USD 1. At participating ecosystem venues, it may be converted in real time into local currency, casino chips, or approved services.</p></div><div class="box p-8"><h3 class="text-xl text-gold mb-6">Not a Direct Fiat Claim</h3><p class="small">CND does not provide a direct fiat redemption right against the Foundation or a regulated financial institution. Conversion occurs through participating casinos, junket operators, exchange partners, resorts, and approved ecosystem channels.</p></div><div class="box p-8"><h3 class="text-xl text-gold mb-6">Revenue</h3><p class="small">Eligible recurring revenue includes casino exchange, payment, and settlement fees. Certain casino exchange channels may support double-digit fee rates.</p></div><div class="box p-8"><h3 class="text-xl text-gold mb-6">Launch Target</h3><p class="small"><strong>Q1 2028</strong>, subject to contract migration, reserve formation, privacy architecture, settlement network readiness, testing, and security review.</p></div></div><div class="slide-footer"><span>CNYT / HCF BUSINESS WHITEPAPER</span><span>13</span></div></div>
+<div class="slide" ><h2 class="slide-title">12. CNYT-to-CND Conversion</h2><div class="two-col flex-1"><div class="box p-8"><h3 class="text-xl text-main mb-6">One-Way Conversion</h3><p class="small">Eligible CNYT may be converted into CND. CND cannot be converted back into CNYT.</p><p class="small mt-4">Converted CNYT is permanently burned, reducing total and circulating supply.</p></div><div class="box p-8"><h3 class="text-xl text-main mb-6">Pricing & Access</h3><p class="small">Conversion value uses the 24-hour CNYT TWAP and a separately published fixed conversion fee.</p><p class="small mt-4">Access begins with approved strategic participants and may expand in phases. LONGRISE receives priority access but no preferential price.</p></div></div>
+<div class="note mt-8">LONGRISE member reward balances do not carry direct CND conversion rights. LONGRISE may convert only CNYT it has validly reacquired into its own strategic pool.</div><div class="slide-footer"><span>CNYT / HCF BUSINESS WHITEPAPER</span><span>14</span></div></div>
+<div class="slide" ><h2 class="slide-title">13. CND Reserve Framework</h2><div class="three-col mb-8"><div class="feature-box"><h4 class="feature-title"><i class="fa-solid fa-building-columns"></i>Casino-Asset-Centered</h4><p class="small">Operating rights, revenue rights, junket interests, exchange reserves, resort equity, and related private-market gaming assets.</p></div><div class="feature-box"><h4 class="feature-title"><i class="fa-solid fa-wallet"></i>Liquidity Support</h4><p class="small">Cash-equivalent and liquid digital assets support settlement and reserve operations.</p></div><div class="feature-box"><h4 class="feature-title"><i class="fa-solid fa-shield"></i>110% Minimum</h4><p class="small">Aggregate risk-adjusted reserve value must remain at least 110% of outstanding CND reference value.</p></div></div>
+<div class="note">CNYT itself is not reserve collateral. Only capital and assets actually contributed, acquired, or contractually allocated through the CNYT structure may enter the CND reserve.</div><div class="slide-footer"><span>CNYT / HCF BUSINESS WHITEPAPER</span><span>15</span></div></div>
+<div class="slide" ><h2 class="slide-title">14. Reserve Valuation & Remediation</h2><div class="two-col flex-1"><div class="box p-8"><h3 class="text-xl text-gold mb-6">Valuation</h3><p class="small">Gaming-linked assets use a hybrid method combining independent external appraisal, actual operating performance, and discounted expected cash flows.</p><p class="small mt-4">Formal independent valuation occurs annually, with internal quarterly monitoring and extraordinary revaluation where necessary.</p></div><div class="box p-8"><h3 class="text-xl text-gold mb-6">Below 110%</h3><p class="small">New CND issuance and CNYT-to-CND conversion are suspended. The Foundation must restore coverage through liquidity contributions, revenue retention, exposure reduction, asset sales, or reserve restructuring.</p></div></div><div class="slide-footer"><span>CNYT / HCF BUSINESS WHITEPAPER</span><span>16</span></div></div>
+<div class="slide" ><h2 class="slide-title">15. Privacy Architecture</h2><div class="flex-1 flex flex-col justify-center"><p class="text-lg mb-6">CND is designed as a <strong>privacy-preserving casino settlement token</strong>. Sender, recipient, amount, wallet relationships, and settlement activity should not be publicly exposed by default.</p>
+<div class="two-col"><div class="box p-8"><h3 class="text-xl text-main mb-4">Private Ledger for Authorized Parties</h3><p class="small">With consent from both transaction parties, authorized key holders may access the complete transaction record as a private ledger.</p></div><div class="box p-8"><h3 class="text-xl text-main mb-4">Validity Proof for Third Parties</h3><p class="small">Third parties receive only a cryptographic proof that the transaction is valid, without seeing identities, amount, or confidential details.</p></div></div>
+<div class="note mt-6">The business whitepaper defines principles only. The blockchain and cryptographic implementation will be specified in a separate technical whitepaper.</div></div><div class="slide-footer"><span>CNYT / HCF BUSINESS WHITEPAPER</span><span>17</span></div></div>
+<div class="slide" ><h2 class="slide-title">16. CNYT Staking</h2><table class="table-custom compact-table mb-6"><thead><tr><th>Commitment</th><th>Distribution Weight</th><th>Activation</th><th>Exit</th></tr></thead><tbody><tr><td>6 months</td><td>1.0x</td><td rowspan="3">14-day activation period</td><td rowspan="3">30-day unbonding after maturity and exit request</td></tr><tr><td>12 months</td><td>1.5x</td></tr><tr><td>24 months</td><td>2.5x</td></tr></tbody></table>
+<ul class="icon-list compact-list"><li><i class="fa-solid fa-lock"></i>Fixed commitments cannot normally be exited early. Limited emergency exceptions require evidence, review, and approval.</li><li><i class="fa-solid fa-rotate"></i>At maturity, the position remains staked at 1.0x until withdrawal or recommitment.</li><li><i class="fa-solid fa-calendar-days"></i>Participants may recommit the same position without first withdrawing.</li></ul><div class="slide-footer"><span>CNYT / HCF BUSINESS WHITEPAPER</span><span>18</span></div></div>
+<div class="slide" ><h2 class="slide-title">17. CND Fee Distributions</h2><div class="three-col mb-6"><div class="stat-card"><span class="stat-number">20–40%</span><div class="stat-label">Net Fee Allocation Range</div></div><div class="stat-card"><span class="stat-number">Quarterly</span><div class="stat-label">Settlement Cycle</div></div><div class="stat-card"><span class="stat-number">CND</span><div class="stat-label">Distribution Asset</div></div></div>
+<ul class="icon-list compact-list"><li><i class="fa-solid fa-filter-circle-dollar"></i>Calculated from net recurring CND exchange, payment, and settlement fees after defined deductions.</li><li><i class="fa-solid fa-scale-unbalanced-flip"></i>Allocated according to eligible weighted staking positions and actual active days.</li><li><i class="fa-solid fa-hourglass-start"></i>Distributions begin after a six-month post-launch stabilization period. Fees earned during stabilization remain entirely within reserves and operations.</li><li><i class="fa-solid fa-triangle-exclamation"></i>Previously paid distributions are not clawed back in approved emergency exits; current unsettled accrual is forfeited.</li></ul><div class="slide-footer"><span>CNYT / HCF BUSINESS WHITEPAPER</span><span>19</span></div></div>
+<div class="slide" ><h2 class="slide-title">18. Governance</h2><div class="two-col flex-1"><div class="box p-8"><h3 class="text-xl text-main mb-6">Quarterly Distribution Proposal</h3><p class="small">The Foundation proposes a rate within 20%–40% of quarterly net CND operating fees.</p><p class="small mt-4">Only holders with active eligible CNYT staking positions may vote. Voting power is based on active staked CNYT without staking-term multipliers.</p></div><div class="box p-8"><h3 class="text-xl text-main mb-6">Approval Rule</h3><p class="small">Quorum: 20% of eligible active staked CNYT.<br>Approval: simple majority of votes cast.</p><p class="small mt-4">If no new rate is approved, the prior approved rate carries forward. The first distribution cycle defaults to 20%.</p></div></div><div class="slide-footer"><span>CNYT / HCF BUSINESS WHITEPAPER</span><span>20</span></div></div>
+<div class="slide" ><h2 class="slide-title">19. Disclosure & Audit</h2><ul class="icon-list compact-list"><li><i class="fa-solid fa-chart-pie"></i><strong>Asset-class disclosure:</strong> aggregate values and proportions for operating rights, revenue rights, exchange reserves, cash-equivalent assets, and liquid digital assets.</li><li><i class="fa-solid fa-user-secret"></i><strong>Private-market confidentiality:</strong> individual asset names and confidential contract terms may be withheld unless formal contribution and disclosure consent are complete.</li><li><i class="fa-solid fa-magnifying-glass-chart"></i><strong>Security review:</strong> smart contracts, privacy components, staking, custody, reserve integration, and settlement systems will undergo independent third-party review.</li><li><i class="fa-solid fa-file-signature"></i><strong>Named providers:</strong> audit firms and security providers will be disclosed only after formal engagement.</li></ul><div class="slide-footer"><span>CNYT / HCF BUSINESS WHITEPAPER</span><span>21</span></div></div>
+<div class="slide" ><h2 class="slide-title">20. Roadmap</h2><table class="table-custom compact-table"><thead><tr><th>Timing</th><th>Milestone</th></tr></thead><tbody>
+<tr><td>October 2024</td><td>CNYT initial generation with 1B fixed supply</td></tr>
+<tr><td>December 15, 2024</td><td>50% LONGRISE member ecosystem allocation</td></tr>
+<tr><td>2025–2026</td><td>Whitepaper, custody, buyback, P2P, staking, governance and reserve framework formalization</td></tr>
+<tr><td>2026–2027</td><td>Phased CNYT contract migration preparation, CND technology, reserve onboarding, privacy design, partner network and security testing</td></tr>
+<tr><td>June 2027</td><td>Target CNYT exchange listing, subject to readiness conditions</td></tr>
+<tr><td>Q1 2028</td><td>Target CND launch</td></tr>
+<tr><td>Post-launch + 6 months</td><td>Stabilization period, then quarterly fee distributions commence</td></tr></tbody></table><div class="slide-footer"><span>CNYT / HCF BUSINESS WHITEPAPER</span><span>22</span></div></div>
+<div class="slide" id="risk-notice"><h2 class="slide-title">21. Key Risk Factors</h2><div class="two-col"><div><ul class="icon-list compact-list"><li><i class="fa-solid fa-scale-balanced"></i><strong>Legal and jurisdiction risk</strong></li><li><i class="fa-solid fa-dice"></i><strong>Casino and gaming regulation risk</strong></li><li><i class="fa-solid fa-money-bill-trend-up"></i><strong>Exchange-volume and revenue risk</strong></li><li><i class="fa-solid fa-water"></i><strong>Liquidity and settlement risk</strong></li></ul></div><div><ul class="icon-list compact-list"><li><i class="fa-solid fa-building-circle-exclamation"></i><strong>Private-asset valuation risk</strong></li><li><i class="fa-solid fa-lock"></i><strong>Custody and smart-contract risk</strong></li><li><i class="fa-solid fa-user-shield"></i><strong>Privacy-technology risk</strong></li><li><i class="fa-solid fa-chart-line"></i><strong>Price, listing and target-value risk</strong></li></ul></div></div>
+<div class="note mt-6">The USD 1.00 long-term strategic target is an objective based on anticipated CND adoption, fee revenue, reserve growth, ecosystem expansion, and CNYT burns. It is not a guaranteed market price or return.</div><div class="slide-footer"><span>CNYT / HCF BUSINESS WHITEPAPER</span><span>23</span></div></div>
+<div class="slide" id="legal-notice"><h2 class="slide-title">22. Legal Disclaimer</h2><div class="flex-1 flex flex-col justify-center"><div class="box-gold-border p-8 mb-6"><p class="small">This whitepaper describes the intended business, economic, reserve, privacy, and governance framework of the CNYT–CND ecosystem. It is not a guarantee that every feature, timeline, partner relationship, valuation, listing, conversion mechanism, distribution, or target will be completed as described.</p></div>
+<p class="small mb-4">CNYT is intended to operate as a security token within a private-market structure. Legal treatment, eligibility, transfer restrictions, disclosures, taxation, and investor rights may differ by jurisdiction.</p>
+<p class="small mb-4">CND is a planned privacy-preserving casino exchange and settlement token. Its reference value, reserve framework, exchange channels, technical architecture, and launch remain subject to development, asset contribution, partner readiness, testing, and applicable legal requirements.</p>
+<p class="small">Participants should obtain independent legal, financial, tax, and technical advice before acquiring, holding, staking, trading, converting, or using CNYT or CND.</p></div><div class="slide-footer"><span>CNYT / HCF BUSINESS WHITEPAPER</span><span>24</span></div></div>
+<div class="slide" style="justify-content:center;align-items:center;text-align:center;"><div class="quote-container"><span class="quote-mark-open">“</span><p class="quote-text">A private casino-capital network, structured through CNYT and expanded through CND exchange, settlement, privacy, and operating revenue.</p><span class="quote-mark-close">”</span><p class="quote-author">Horizon Capital Foundation</p></div><div class="slide-footer"><span>CNYT / HCF BUSINESS WHITEPAPER</span><span>25</span></div></div>
+</body></html>

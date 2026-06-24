@@ -46,7 +46,7 @@
       <div class="hidden md:flex space-x-10 text-xs font-bold tracking-[0.2em] text-gray-300">
         <a href="#vision" class="hover:text-casino-gold transition-colors">VISION</a>
         <a href="#portfolio" class="hover:text-casino-gold transition-colors">HUBS</a>
-        <a href="#deca-force" class="hover:text-casino-gold transition-colors">DECA-FORCE</a>
+        <a href="#growth-engine" class="hover:text-casino-gold transition-colors">GROWTH ENGINE</a>
       </div>
 
       <a href="#portfolio" class="hidden sm:inline-block px-5 md:px-6 py-2.5 bg-casino-gold text-black text-xs font-black tracking-widest uppercase glow-button rounded-sm">
@@ -76,13 +76,14 @@
             A long-term RWA-backed casino network vision from
             <strong class="text-white font-bold">$0.01</strong>
             to
-            <strong class="text-casino-gold font-bold">$10.00</strong>.
+            <strong class="text-casino-gold font-bold">$1.00</strong>.
             <br class="hidden md:block" />
             Anchored by the cash flows of 6 strategic casino hubs.
           </p>
         </div>
 
-        <div class="grid grid-cols-2 md:grid-cols-4 gap-px bg-white/10 max-w-5xl mx-auto border border-white/10 rounded-sm overflow-hidden mb-12 text-center backdrop-blur-md">
+        <div class="relative grid grid-cols-2 md:grid-cols-4 gap-px bg-white/10 max-w-5xl mx-auto border border-white/10 rounded-sm overflow-hidden mb-12 text-center backdrop-blur-md">
+          <div class="absolute top-0 left-0 w-1 h-full bg-casino-gold shadow-[0_0_15px_#c5a880] z-10"></div>
           <div class="bg-[#0a0a0a]/90 p-6 md:p-8 hover:bg-[#111]/95 transition-colors">
             <p class="text-gray-300 text-xs font-bold tracking-[0.14em] mb-3 uppercase mobile-readable">Strategic Entry</p>
             <p class="text-4xl hero-stats font-serif text-white">$0.01</p>
@@ -94,17 +95,20 @@
               <span class="w-1.5 h-1.5 rounded-full bg-casino-gold animate-pulse"></span>
               Current Value
             </p>
-            <p id="current-price" class="relative text-4xl hero-stats font-serif text-casino-gold font-bold">$0.023</p>
+            <p id="current-price" class="relative text-4xl hero-stats font-serif text-casino-gold font-bold">$0.021</p>
+            <p class="relative text-[10px] text-gray-400 font-bold tracking-[0.12em] uppercase mt-3 mobile-readable">
+              Reference valid through Q3 2026
+            </p>
           </div>
 
           <div class="bg-[#0a0a0a]/90 p-6 md:p-8 hover:bg-[#111]/95 transition-colors">
-            <p class="text-gray-300 text-xs font-bold tracking-[0.14em] mb-3 uppercase mobile-readable">CNYT Market Cap</p>
-            <p class="text-4xl hero-stats font-serif text-white">$230M</p>
+            <p class="text-gray-300 text-xs font-bold tracking-[0.14em] mb-3 uppercase mobile-readable">Initial CNYT Value</p>
+            <p class="text-4xl hero-stats font-serif text-white">$10M</p>
           </div>
 
           <div class="bg-[#0a0a0a]/90 p-6 md:p-8 hover:bg-[#111]/95 transition-colors">
-            <p class="text-gray-300 text-xs font-bold tracking-[0.14em] mb-3 uppercase mobile-readable">Foundation Assets</p>
-            <p class="text-4xl hero-stats font-serif text-white">$1.0B</p>
+            <p class="text-gray-300 text-xs font-bold tracking-[0.14em] mb-3 uppercase mobile-readable">Network Assets</p>
+            <p class="text-4xl hero-stats font-serif text-white">~$700M</p>
           </div>
         </div>
 
@@ -120,10 +124,10 @@
             <div>
               <h4 class="text-xl font-serif text-white mb-3 flex items-center">
                 <span class="text-casino-gold text-sm font-sans font-bold tracking-widest mr-3">01.</span>
-                The $10.00 Long-Term Vision
+                The $1.00 Long-Term Vision
               </h4>
               <p class="text-gray-300 text-sm md:text-base leading-relaxed">
-                Establish a long-term target valuation of <strong class="text-white">$10.00 per CNYT</strong> token, positioning it as a premium RWA-backed digital asset in the global gaming sector.
+                Establish a long-term strategic target of <strong class="text-white">$1.00 per CNYT</strong> token, aligned with the CND adoption, fee revenue, reserve growth, ecosystem expansion, and burn framework.
               </p>
             </div>
 
@@ -174,9 +178,9 @@
 
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 relative z-10">
 
-          <article class="casino-card group flex flex-col h-full rounded-md relative">
+          <article class="casino-card linked-card group flex flex-col h-full rounded-md relative" role="link" tabindex="0" aria-label="Visit Eclipse Casino official site" onclick="if (!event.target.closest('a')) window.open('https://eclipse.casino/', '_blank', 'noopener')" onkeydown="if ((event.key === 'Enter' || event.key === ' ') && !event.target.closest('a')) { event.preventDefault(); window.open('https://eclipse.casino/', '_blank', 'noopener'); }">
             <div class="relative h-72 overflow-hidden">
-              <img src="./assets/images/vasino-eclipse-card.jpg" alt="Eclipse Casino gaming floor in Batumi, Georgia" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" loading="lazy" />
+              <img src="https://eclipse.casino/wp-content/uploads/2023/03/4N8A0426-scaled.jpg" alt="Eclipse Casino gaming floor in Batumi, Georgia" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" loading="lazy" />
               <div class="absolute inset-0 img-overlay pointer-events-none"></div>
               <div class="absolute bottom-6 left-6 right-6 z-10">
                 <p class="text-casino-gold text-xs font-black tracking-[0.16em] uppercase mb-1 drop-shadow-md mobile-readable">Georgia / Batumi</p>
@@ -197,7 +201,7 @@
             </div>
           </article>
 
-          <article class="casino-card group flex flex-col h-full rounded-md relative">
+          <article class="casino-card linked-card group flex flex-col h-full rounded-md relative" role="link" tabindex="0" aria-label="Visit Grand Casino Beograd official site" onclick="if (!event.target.closest('a')) window.open('https://grandcasinoadmiral.rs/', '_blank', 'noopener')" onkeydown="if ((event.key === 'Enter' || event.key === ' ') && !event.target.closest('a')) { event.preventDefault(); window.open('https://grandcasinoadmiral.rs/', '_blank', 'noopener'); }">
             <div class="relative h-72 overflow-hidden">
               <img src="./assets/images/grand-casino-beograd-card.jpg" alt="Grand Casino Beograd gaming floor in Belgrade, Serbia" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" loading="lazy" />
               <div class="absolute inset-0 img-overlay pointer-events-none"></div>
@@ -222,11 +226,11 @@
 
           <article class="casino-card group flex flex-col h-full rounded-md relative">
             <div class="relative h-72 overflow-hidden">
-              <img src="https://images.unsplash.com/photo-1577717903315-1691ae25ab3f?auto=format&fit=crop&q=80&w=900" alt="Manila Bay VIP Room" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" loading="lazy" />
+              <img src="./assets/images/vip-junket-rooms-card.jpg" alt="VIP Junket Rooms" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" loading="lazy" />
               <div class="absolute inset-0 img-overlay pointer-events-none"></div>
               <div class="absolute bottom-6 left-6 right-6 z-10">
                 <p class="text-casino-gold text-xs font-black tracking-[0.16em] uppercase mb-1 drop-shadow-md mobile-readable">Philippines</p>
-                <h3 class="text-3xl font-serif text-white drop-shadow-lg leading-tight">Manila Bay VIP Room</h3>
+                <h3 class="text-3xl font-serif text-white drop-shadow-lg leading-tight">VIP Junket Rooms</h3>
               </div>
             </div>
             <div class="p-8 flex flex-col flex-grow bg-gradient-to-b from-transparent to-[#050505]/80">
@@ -235,7 +239,7 @@
                 <span class="text-2xl font-serif text-white">$20,000,000</span>
               </div>
               <p class="text-gray-300 text-sm leading-relaxed font-light flex-grow">
-                A VIP exclusive room serving as a core Asian cash-flow hub and liquidity engine for the CNYT ecosystem.
+                A confidential network of VIP junket rooms positioned as an Asian cash-flow hub and liquidity engine for the CNYT ecosystem.
               </p>
               <div class="mt-6 flex items-center text-casino-gold text-xs font-bold tracking-widest uppercase">
                 View Asset Data <span class="ml-2">&rarr;</span>
@@ -245,11 +249,11 @@
 
           <article class="casino-card group flex flex-col h-full rounded-md relative">
             <div class="relative h-72 overflow-hidden">
-              <img src="https://images.unsplash.com/photo-1605810230434-7631ac76ec81?auto=format&fit=crop&q=80&w=900" alt="Da Nang Azure Exchange" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" loading="lazy" />
+              <img src="./assets/images/some-casino-forex-card.jpg" alt="Some Casino Forex" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" loading="lazy" />
               <div class="absolute inset-0 img-overlay pointer-events-none"></div>
               <div class="absolute bottom-6 left-6 right-6 z-10">
                 <p class="text-casino-gold text-xs font-black tracking-[0.16em] uppercase mb-1 drop-shadow-md mobile-readable">Vietnam</p>
-                <h3 class="text-3xl font-serif text-white drop-shadow-lg leading-tight">Da Nang Azure Exchange</h3>
+                <h3 class="text-3xl font-serif text-white drop-shadow-lg leading-tight">Some Casino Forex</h3>
               </div>
             </div>
             <div class="p-8 flex flex-col flex-grow bg-gradient-to-b from-transparent to-[#050505]/80">
@@ -258,7 +262,7 @@
                 <span class="text-2xl font-serif text-white">$25,000,000</span>
               </div>
               <p class="text-gray-300 text-sm leading-relaxed font-light flex-grow">
-                A Southeast Asian growth hub securing premium casino stakes and exclusive resort exchange operation rights.
+                Casino-based foreign exchange counters across multiple Vietnam venues, supporting guest liquidity and regional settlement flow.
               </p>
               <div class="mt-6 flex items-center text-casino-gold text-xs font-bold tracking-widest uppercase">
                 View Asset Data <span class="ml-2">&rarr;</span>
@@ -268,7 +272,7 @@
 
           <article class="casino-card group flex flex-col h-full rounded-md relative">
             <div class="relative h-72 overflow-hidden">
-              <img src="https://images.unsplash.com/photo-1541271696563-3be2f555fc4e?auto=format&fit=crop&q=80&w=900" alt="Ocean Star SEZ Casino" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" loading="lazy" />
+              <img src="./assets/images/ocean-star-sez-casino-card.jpg" alt="Ocean Star SEZ Casino" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" loading="lazy" />
               <div class="absolute inset-0 img-overlay pointer-events-none"></div>
               <div class="absolute bottom-6 left-6 right-6 z-10">
                 <p class="text-casino-gold text-xs font-black tracking-[0.16em] uppercase mb-1 drop-shadow-md mobile-readable">Cambodia</p>
@@ -291,7 +295,7 @@
 
           <article class="casino-card group flex flex-col h-full rounded-md relative">
             <div class="relative h-72 overflow-hidden">
-              <img src="https://images.unsplash.com/photo-1639322537228-f710d846310a?auto=format&fit=crop&q=80&w=900" alt="LONGRISE AI Quant Betting" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" loading="lazy" />
+              <img src="./assets/images/longrise-ai-systems-card.jpg" alt="LONGRISE AI Quant Betting" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" loading="lazy" />
               <div class="absolute inset-0 img-overlay pointer-events-none"></div>
               <div class="absolute bottom-6 left-6 right-6 z-10">
                 <p class="text-casino-gold text-xs font-black tracking-[0.16em] uppercase mb-1 drop-shadow-md mobile-readable">Global Tech Hub</p>
@@ -316,14 +320,14 @@
       </div>
     </section>
 
-    <section id="deca-force" class="py-32 px-6 relative border-t border-white/10 bg-gradient-to-b from-transparent to-[#0a0a0a]">
+    <section id="growth-engine" class="py-32 px-6 relative border-t border-white/10 bg-gradient-to-b from-transparent to-[#0a0a0a]">
       <div class="max-w-5xl mx-auto relative z-10">
         <div class="text-center mb-20 drop-shadow-xl">
           <h2 class="text-4xl md:text-5xl font-serif font-bold mb-4 text-white">
-            The Deca-Force Protocol
+            The Growth Engine
           </h2>
           <p class="text-casino-gold text-sm font-bold tracking-[0.22em] uppercase mobile-readable">
-            The Mathematics of Growth Potential
+            The Mechanics of Network Growth
           </p>
         </div>
 
@@ -368,26 +372,25 @@
     </section>
   </main>
 
-  <footer class="bg-[#050505] py-16 px-6 border-t border-white/10 relative z-20">
+  <footer class="bg-[#050505] py-10 px-6 border-t border-white/10 relative z-20">
     <div class="absolute top-0 left-1/2 -translate-x-1/2 w-1/2 h-px bg-gradient-to-r from-transparent via-casino-gold to-transparent opacity-30"></div>
 
-    <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center mb-12">
-      <div class="mb-8 md:mb-0 text-center md:text-left">
-        <div class="text-3xl font-serif font-bold text-white mb-2">
+    <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6">
+      <div class="text-center md:text-left">
+        <div class="text-2xl font-serif font-bold text-white mb-1">
           <span class="text-casino-gold">C</span>NYT
         </div>
         <p class="text-xs text-gray-400 tracking-widest">HORIZON CAPITAL FOUNDATION</p>
       </div>
 
-      <div class="flex flex-wrap justify-center gap-6 md:gap-8 text-xs font-bold tracking-widest text-gray-400 uppercase">
-        <a href="./assets/docs/CNYT_Whitepaper_v1.0.pdf" download class="hover:text-white transition-colors">Whitepaper</a>
-        <a href="#" class="hover:text-white transition-colors">Audit</a>
-        <a href="#" class="hover:text-white transition-colors">Legal</a>
+      <div class="flex flex-wrap justify-center gap-6 text-xs font-bold tracking-widest text-gray-400 uppercase">
+        <a href="./assets/docs/CNYT_Integrated_Whitepaper_v2.html" class="hover:text-white transition-colors">Whitepaper</a>
+        <a href="./assets/docs/CNYT_Integrated_Whitepaper_v2.html#tokenomics" class="hover:text-white transition-colors">Tokenomics</a>
+        <a href="./assets/docs/risk-notice.html" class="hover:text-white transition-colors">Risk Notice</a>
+        <a href="./assets/docs/legal-notice.html" class="hover:text-white transition-colors">Legal Notice</a>
+        <a href="mailto:contact@cnyt.world" class="hover:text-white transition-colors">Contact</a>
+        <span>&copy; 2026 HCF</span>
       </div>
-    </div>
-
-    <div class="text-center text-xs text-gray-500">
-      &copy; 2026 Horizon Capital Foundation. All rights reserved.
     </div>
   </footer>
 
