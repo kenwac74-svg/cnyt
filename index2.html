@@ -68,6 +68,17 @@ body{background:linear-gradient(180deg,#0d0e0d 0%,#10110e 46%,#0d0e0d 100%)}
 .reach-card.image-card{background-position:center;background-size:cover;background-repeat:no-repeat;filter:grayscale(.18) saturate(.78)}
 .leadership{align-items:start}.leadership-message{display:block;align-self:start;visibility:visible}.leadership-message>p{max-width:720px}.leadership-aside{align-self:start}
 
+/* Asymmetric partner layout: editorial hierarchy rather than equal tiles. */
+.reach-grid{grid-template-columns:repeat(12,minmax(0,1fr));gap:16px}
+.reach-card.georgia{grid-column:span 7;min-height:470px}
+.reach-card.serbia{grid-column:span 5;min-height:470px}
+.reach-card.vip-card,.reach-card.forex-card,.reach-card.ocean-card{grid-column:span 4;min-height:350px}
+.reach-card.featured-card{grid-column:1/-1;min-height:500px;background-image:url('./assets/images/longrise-ai-systems-card.jpg');background-position:center top;filter:saturate(.82);text-decoration:none}
+.reach-card.featured-card:after{background:linear-gradient(90deg,rgba(9,10,8,.1),rgba(9,10,8,.08) 45%,rgba(9,10,8,.78)),linear-gradient(0deg,rgba(9,10,8,.86),transparent 56%)}
+.reach-card.featured-card>div{max-width:560px}.reach-card.featured-card h3{font-size:36px}.reach-card.featured-card:hover{filter:saturate(1)}
+@media(max-width:900px){.reach-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.reach-card.georgia,.reach-card.serbia,.reach-card.vip-card,.reach-card.forex-card,.reach-card.ocean-card{grid-column:span 1;min-height:380px}.reach-card.featured-card{grid-column:1/-1;min-height:430px}}
+@media(max-width:600px){.reach-grid{grid-template-columns:1fr}.reach-card.georgia,.reach-card.serbia,.reach-card.vip-card,.reach-card.forex-card,.reach-card.ocean-card,.reach-card.featured-card{grid-column:1;min-height:340px}.reach-card.featured-card{background-position:center top}.reach-card.featured-card h3{font-size:28px}}
+
 /* Readability floor: no public-facing copy below a practical reading size. */
 .eyebrow,.site-header nav a,.header-cta,.signal-strip b,.signal-strip span,.principal-grid article>span,.section-number,.status,.reach-card small,.reach-note,.identity-note,.signature-block small,.access-steps b,.privacy-points span,.layer-copy .fine,footer p,footer>div,footer small{font-size:12px}
 .eyebrow,.status,.reach-card small,.identity-note,.signature-block small,.privacy-points span,footer p,footer>div{letter-spacing:.09em}
@@ -173,7 +184,7 @@ body{background:linear-gradient(180deg,#0d0e0d 0%,#10110e 46%,#0d0e0d 100%)}
         <article class="reach-card image-card vip-card"><span class="status">Active focus</span><div><small>Philippines</small><h3>Premium gaming<br />& junket infrastructure</h3></div></article>
         <article class="reach-card image-card forex-card"><span class="status">Strategic focus</span><div><small>Southeast Asia</small><h3>Settlement, payments<br />& liquidity</h3></div></article>
         <article class="reach-card image-card ocean-card"><span class="status">Market development</span><div><small>Cambodia</small><h3>Casino development<br />& special economic zones</h3></div></article>
-        <article class="reach-card image-card technology-card"><span class="status">Technology partner network</span><div><small>Gaming infrastructure</small><h3>Systems connecting assets,<br />capital & operations</h3></div></article>
+        <a href="https://kenwac74-svg.github.io/AIHP/" target="_blank" rel="noopener noreferrer" class="reach-card image-card technology-card featured-card" aria-label="Visit LONGRISE AI Systems website"><span class="status">Technology partner network</span><div><small>LONGRISE 쨌 AI Systems</small><h3>Technology connecting gaming,<br />capital & automated execution</h3></div></a>
       </div>
       <p class="reach-note">Market references indicate network reach and strategic focus. They do not, by themselves, represent ownership, committed capital, or completed transactions.</p>
     </section>
