@@ -21,6 +21,37 @@ section{position:relative;z-index:1}.network,.reach,.access{padding-top:140px;pa
 .access{display:grid;grid-template-columns:1fr 1fr;gap:110px;background:linear-gradient(100deg,rgba(207,176,121,.035),transparent)}.access-heading .eyebrow{margin:20px 0}.access-steps{list-style:none;padding:0;margin:0;border-top:1px solid var(--line)}.access-steps li{display:grid;grid-template-columns:52px 1fr;gap:20px;padding:26px 0;border-bottom:1px solid var(--line)}.access-steps b{font:500 11px var(--serif);color:var(--gold)}.access-steps h3{font:500 21px var(--serif);margin:0 0 8px}.access-steps p{font-size:13px;line-height:1.6;color:#888984;margin:0}.confidentiality{padding-top:110px;padding-bottom:110px;border:1px solid var(--line);display:grid;grid-template-columns:150px 1.2fr .7fr;gap:55px;align-items:center;background:#0d0e0c}.confidentiality .eyebrow{margin-bottom:19px}.confidentiality p{margin-top:25px;max-width:720px}.lock-mark{width:100px;height:100px;border:1px solid var(--line);border-radius:50%;position:relative}.lock-mark:before{content:"";position:absolute;width:26px;height:24px;border:1px solid var(--gold);left:36px;top:43px}.lock-mark:after{content:"";position:absolute;width:15px;height:17px;border:1px solid var(--gold);border-bottom:0;border-radius:12px 12px 0 0;left:41px;top:27px}.privacy-points{display:flex;flex-direction:column}.privacy-points span{font-size:11px;text-transform:uppercase;letter-spacing:.12em;color:#aaa;padding:16px 0;border-bottom:1px solid var(--line)}
 .digital-layer{padding-top:150px;padding-bottom:150px;display:grid;grid-template-columns:1.1fr .9fr;gap:100px}.digital-layer .eyebrow{margin-bottom:24px}.layer-copy{padding-top:35px}.layer-copy>p{font-size:16px}.layer-copy div{margin:34px 0;border-top:1px solid var(--line)}.layer-copy span{display:block;padding:16px 0;border-bottom:1px solid var(--line);color:var(--pale);font-size:12px;text-transform:uppercase;letter-spacing:.13em}.layer-copy .fine{font-size:11px;color:#666;line-height:1.7}.closing{text-align:center;padding-top:150px;padding-bottom:150px;border-top:1px solid var(--line);background:radial-gradient(circle at center,rgba(207,176,121,.07),transparent 56%)}.closing h2{margin:25px 0}.closing p{color:#92938e;margin:0 auto 36px;max-width:600px;line-height:1.7}
 footer{min-height:190px;border-top:1px solid rgba(255,255,255,.07);display:grid;grid-template-columns:auto 1fr auto;gap:32px;align-items:center;color:#6e6f6a}footer p{font-size:10px;text-transform:uppercase;letter-spacing:.15em}footer>div{display:flex;gap:24px;font-size:10px;text-transform:uppercase;letter-spacing:.12em}footer small{grid-column:1/-1;border-top:1px solid rgba(255,255,255,.05);padding-top:18px;font-size:9px}.reveal{opacity:0;transform:translateY(28px);transition:opacity .8s ease,transform .8s ease}.reveal.visible{opacity:1;transform:none}
+footer address{grid-column:1/-1;color:#777872;font-size:12px;line-height:1.7;font-style:normal;margin-top:4px}
+
+/* Editorial refinement: tighter institutional measure and clearer public information hierarchy */
+.section-shell{max-width:1180px;padding-left:48px;padding-right:48px}
+.site-header{padding-left:max(32px,calc((100vw - 1180px)/2 + 48px));padding-right:max(32px,calc((100vw - 1180px)/2 + 48px))}
+.hero h1{font-size:clamp(54px,6.2vw,86px);max-width:1040px;line-height:1.06}
+.hero-copy{max-width:690px}
+.capabilities{padding-top:128px;padding-bottom:128px}
+.capabilities-intro{display:grid;grid-template-columns:.7fr 1.15fr .85fr;gap:58px;align-items:start;margin-bottom:62px}
+.capabilities-intro>div{display:flex;align-items:center;gap:16px}
+.capabilities-intro h2,.framework-panel h2{font:500 clamp(38px,4.2vw,56px)/1.14 var(--serif);letter-spacing:-.025em;color:var(--pale);margin:0}
+.capabilities-intro>p,.framework-panel>p{font-size:16px;line-height:1.8;color:#a9aaa5;margin:0}
+.capabilities-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));border-top:1px solid var(--line);border-left:1px solid var(--line)}
+.capabilities-grid article{min-height:265px;padding:34px 38px 38px;border-right:1px solid var(--line);border-bottom:1px solid var(--line);transition:transform .28s ease,background .28s ease,border-color .28s ease}
+.capabilities-grid article:hover{transform:translateY(-4px);background:rgba(197,168,128,.045);border-color:rgba(197,168,128,.36)}
+.capabilities-grid article>span{font:500 12px var(--serif);color:#8b795d}
+.capabilities-grid h3{font:500 27px/1.25 var(--serif);color:var(--pale);margin:42px 0 14px}
+.capabilities-grid p{font-size:15px;line-height:1.75;color:#969791;max-width:470px;margin:0}
+.private-framework{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0;padding-top:120px;padding-bottom:120px;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.framework-panel{padding:8px 60px 8px 0}
+.framework-panel+ .framework-panel{padding-left:60px;padding-right:0;border-left:1px solid var(--line)}
+.framework-panel h2{font-size:clamp(34px,3.4vw,46px);margin:17px 0 24px}
+.framework-panel>p{max-width:520px}
+.framework-points{display:flex;flex-direction:column;gap:13px;margin-top:30px}
+.framework-points span{display:flex;align-items:center;gap:13px;font-size:14px;color:#aaa69c}
+.framework-points span:before{content:"";width:5px;height:5px;flex:0 0 auto;border-radius:50%;background:var(--gold)}
+.framework-fine{font-size:13px!important;color:#77786f!important;border-top:1px solid var(--line);padding-top:20px;margin-top:28px!important}
+.reveal{opacity:.12;transform:translateY(18px)}
+@media(prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}.capabilities-grid article{transition:none}}
+@media(max-width:900px){.capabilities-intro{grid-template-columns:1fr;gap:24px}.private-framework{grid-template-columns:1fr}.framework-panel{padding:0 0 60px}.framework-panel+ .framework-panel{padding:60px 0 0;border-left:0;border-top:1px solid var(--line)}}
+@media(max-width:700px){.section-shell{padding-left:22px;padding-right:22px}.hero h1{font-size:clamp(40px,11.2vw,52px)}.capabilities{padding-top:86px;padding-bottom:86px}.capabilities-grid{grid-template-columns:1fr}.capabilities-grid article{min-height:0;padding:30px 26px 34px}.capabilities-grid h3{font-size:25px;margin-top:28px}.capabilities-grid p{font-size:16px}.private-framework{padding-top:82px;padding-bottom:82px}.framework-panel h2{font-size:34px}.framework-panel>p{font-size:16px}.framework-points span{font-size:14px}}
 @media(max-width:900px){.section-shell{padding-left:28px;padding-right:28px}.site-header{padding:0 28px;height:74px}.brand small,.header-cta{display:none}.menu-toggle{display:block;margin-left:auto;border:0;background:none;width:35px;height:35px;padding:7px}.menu-toggle span{display:block;height:1px;background:#ddd;margin:7px 0}.site-header nav{display:none;position:absolute;top:74px;left:0;right:0;padding:24px 28px;background:#0b0c0b;border-bottom:1px solid var(--line);flex-direction:column;gap:22px}.site-header nav.open{display:flex}.hero{padding-top:140px;min-height:auto}.hero h1{font-size:clamp(48px,12vw,74px)}.signal-strip{grid-template-columns:1fr;margin-top:70px}.signal-strip div{border-right:0;border-bottom:1px solid var(--line)}.signal-strip div:last-child{border-bottom:0}.section-intro,.section-intro.compact{grid-template-columns:1fr;gap:28px}.principal-grid{grid-template-columns:1fr 1fr}.principal-grid article:nth-child(2){border-right:0}.principal-grid article:nth-child(-n+2){border-bottom:1px solid var(--line)}.leadership{grid-template-columns:1fr;gap:60px}.representative-mark{width:150px;height:180px}.leadership-message{padding-left:25px}.opportunity{grid-template-columns:1fr;padding:0}.opportunity-image{min-height:430px;background-image:linear-gradient(0deg,var(--ink),transparent 50%),url('./assets/images/grand-casino-beograd-card.jpg')}.opportunity-copy{padding:70px 28px}.access,.digital-layer{grid-template-columns:1fr;gap:60px}.confidentiality{grid-template-columns:100px 1fr}.privacy-points{grid-column:1/-1}.wide-card{grid-template-columns:1fr}.tech-lines{display:none}}
 @media(max-width:600px){.section-shell{padding-left:20px;padding-right:20px}.site-header{padding:0 20px}.hero{padding-top:125px;padding-bottom:48px}.hero h1{font-size:45px;line-height:1.04;margin:25px 0}.hero-copy{font-size:15px}.hero-actions{flex-direction:column}.button{width:100%}.signal-strip{margin-top:55px}.network,.reach,.access{padding-top:92px;padding-bottom:92px}.section-intro{margin-bottom:48px}.section-intro h2,.opportunity h2,.access h2,.confidentiality h2,.digital-layer h2,.closing h2{font-size:38px}.principal-grid{grid-template-columns:1fr}.principal-grid article{border-right:0;border-bottom:1px solid var(--line)!important;min-height:auto;padding:30px 20px}.principal-grid h3{margin-top:28px}.leadership{padding-top:90px;padding-bottom:90px;gap:50px}.representative-mark{width:125px;height:150px;font-size:72px}.leadership-message{padding-left:0}.quote-mark{left:-8px;top:-45px}.leadership-message h2{font-size:35px}.opportunity-image{min-height:300px}.reach-grid{grid-template-columns:1fr}.reach-card{min-height:350px}.wide-card{grid-column:auto}.confidentiality{margin:0 20px;padding:55px 25px;grid-template-columns:1fr}.digital-layer{padding-top:95px;padding-bottom:95px}.closing{padding-top:100px;padding-bottom:100px}footer{grid-template-columns:1fr;padding-top:48px;padding-bottom:38px}footer>div,footer small{grid-column:1}.reach-card h3{font-size:27px}}
 @media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important}.ambient{display:none}.reveal{opacity:1;transform:none;transition:none}}
@@ -101,6 +132,10 @@ body{background:linear-gradient(180deg,#0d0e0d 0%,#10110e 46%,#0d0e0d 100%)}
 @media(max-width:600px){.eyebrow,.signal-strip b,.signal-strip span,.section-number,.status,.reach-card small,.reach-note,.identity-note,.signature-block small,.access-steps b,.privacy-points span,.layer-copy .fine,footer p,footer>div,footer small{font-size:13px}.site-header nav a{font-size:13px}}
 .digital-layer{background:radial-gradient(circle at 0% 80%,rgba(76,82,52,.09),transparent 28%)}.layer-copy span:before{content:'-';color:#a98e61;margin-right:13px}.closing{background:radial-gradient(circle at center,rgba(117,91,51,.11),transparent 55%)}.closing .eyebrow{color:#c5a880}
 
+/* Final editorial scale overrides */
+.hero h1{font-size:clamp(54px,6.2vw,86px);line-height:1.06;max-width:1040px}
+@media(max-width:700px){.hero h1{font-size:clamp(40px,11.2vw,52px);line-height:1.04}}
+
 </style>
 </head>
 <body>
@@ -121,8 +156,8 @@ body{background:linear-gradient(180deg,#0d0e0d 0%,#10110e 46%,#0d0e0d 100%)}
   <main id="top">
     <section class="hero section-shell">
       <div class="eyebrow">International gaming network &middot; By introduction</div>
-      <h1>A private network for the <em>business of gaming.</em></h1>
-      <p class="hero-copy">CNYT connects owners, operators, capital, and specialist partners around selected casino and hospitality opportunities.</p>
+      <h1>Where casino ownership, strategic capital, and international execution meet&mdash;<em>privately.</em></h1>
+      <p class="hero-copy">CNYT is a selective network connecting owners, operators, investors, and specialist partners around international casino, hospitality, and gaming-infrastructure opportunities.</p>
       <div class="hero-actions">
         <a class="button primary" href="#network">Explore the network</a>
         <a class="button secondary" href="#access">Private access <span>&nearr;</span></a>
@@ -175,19 +210,17 @@ body{background:linear-gradient(180deg,#0d0e0d 0%,#10110e 46%,#0d0e0d 100%)}
       </div>
     </section>
 
-    <section class="opportunity section-shell reveal">
-      <div class="opportunity-image" role="img" aria-label="Premium casino interior"></div>
-      <div class="opportunity-copy">
-        <span class="section-number">03</span>
-        <div class="eyebrow">What the network enables</div>
-        <h2>Selected opportunities, considered privately.</h2>
+    <section id="enables" class="capabilities section-shell reveal">
+      <div class="capabilities-intro">
+        <div><span class="section-number">03</span><span class="eyebrow">Capabilities</span></div>
+        <h2>What the network enables.</h2>
         <p>The network brings commercial, operating, and regional knowledge together before an opportunity moves into formal review.</p>
-        <ul>
-          <li><span>01</span>Off-market casino and resort opportunities</li>
-          <li><span>02</span>Cross-border project formation and capital matching</li>
-          <li><span>03</span>Operator, license-holder, and technology partnerships</li>
-          <li><span>04</span>VIP traffic, settlement, and gaming infrastructure</li>
-        </ul>
+      </div>
+      <div class="capabilities-grid">
+        <article><span>01</span><h3>Off-market opportunities</h3><p>Selected casino and resort opportunities considered privately before any formal or public process.</p></article>
+        <article><span>02</span><h3>Cross-border formation</h3><p>Project formation and capital matching across jurisdictions, aligned on commercial and regulatory footing.</p></article>
+        <article><span>03</span><h3>Partner matching</h3><p>Introductions between operators, licence holders, capital, and specialist partners suited to a specific mandate.</p></article>
+        <article><span>04</span><h3>Infrastructure &amp; settlement</h3><p>VIP traffic, payments, data, and settlement infrastructure connecting venues and relationships.</p></article>
       </div>
     </section>
 
@@ -222,26 +255,20 @@ body{background:linear-gradient(180deg,#0d0e0d 0%,#10110e 46%,#0d0e0d 100%)}
       </ol>
     </section>
 
-    <section class="confidentiality section-shell reveal">
-      <div class="lock-mark" aria-hidden="true"><span></span></div>
-      <div>
+    <section class="private-framework section-shell reveal">
+      <article class="framework-panel">
         <div class="eyebrow">Designed for discretion</div>
         <h2>Confidentiality is part of the process.</h2>
         <p>Investor identities are not publicly disclosed. Opportunities are shared on a need-to-know basis, transaction materials remain within controlled environments, and compliance is conducted privately through designated professional channels.</p>
-      </div>
-      <div class="privacy-points"><span>Non-public participation</span><span>Selective disclosure</span><span>Professional compliance</span></div>
-    </section>
-
-    <section class="digital-layer section-shell reveal">
-      <div>
+        <div class="framework-points"><span>Non-public participation</span><span>Selective disclosure</span><span>Professional compliance &amp; KYC/AML</span></div>
+      </article>
+      <article class="framework-panel">
         <div class="eyebrow">The digital participation layer</div>
         <h2>A digital layer for network participation.</h2>
-      </div>
-      <div class="layer-copy">
         <p>CNYT is designed as the network's private digital participation layer&mdash;not a public retail proposition.</p>
-        <div><span>Private allocation</span><span>Network-aligned participation</span><span>Long-term portfolio linkage</span></div>
-        <p class="fine">Detailed structure, rights, and token economics are reserved for the whitepaper, private memorandum, and controlled data room.</p>
-      </div>
+        <div class="framework-points"><span>Private allocation</span><span>Network-aligned participation</span><span>Long-term portfolio linkage</span></div>
+        <p class="framework-fine">Detailed structure, rights, and token economics are reserved for the whitepaper, private memorandum, and controlled data room.</p>
+      </article>
     </section>
 
     <section class="closing section-shell reveal">
