@@ -1,245 +1,126 @@
-html,
-body {
-  margin: 0;
-  min-height: 100%;
-  background: #0a0a0a;
-  color: #e5e5e5;
-  font-family: 'Inter', sans-serif;
-  overflow-x: hidden;
-}
+:root{--ink:#080908;--panel:#10110f;--line:rgba(213,186,132,.18);--gold:#cfb079;--pale:#f2eadb;--muted:#a9aaa5;--serif:'Playfair Display',serif;--sans:'DM Sans',sans-serif}
+*{box-sizing:border-box}html{background:var(--ink)}body{margin:0;background:var(--ink);color:#ecebe7;font-family:var(--sans);font-weight:300;overflow-x:hidden}a{color:inherit;text-decoration:none}.section-shell{max-width:1360px;margin:auto;padding-left:64px;padding-right:64px}.ambient{position:fixed;inset:0;pointer-events:none;z-index:0;background:radial-gradient(circle at 85% 12%,rgba(207,176,121,.09),transparent 28%),radial-gradient(circle at 12% 45%,rgba(207,176,121,.045),transparent 34%)}.ambient span{position:absolute;width:2px;height:2px;background:var(--gold);border-radius:50%;opacity:.5;box-shadow:0 0 12px var(--gold);animation:float 10s infinite linear}.ambient span:nth-child(1){left:9%;animation-delay:-4s}.ambient span:nth-child(2){left:62%;animation-delay:-8s}.ambient span:nth-child(3){left:91%;animation-delay:-2s}@keyframes float{from{top:105vh;opacity:0}20%{opacity:.45}to{top:-5vh;opacity:0}}
+.site-header{height:88px;padding:0 max(32px,calc((100vw - 1360px)/2 + 64px));position:fixed;top:0;left:0;right:0;display:flex;align-items:center;z-index:20;background:rgba(8,9,8,.86);backdrop-filter:blur(18px);border-bottom:1px solid rgba(255,255,255,.07)}.brand{font:600 22px/1 var(--serif);letter-spacing:.12em;white-space:nowrap}.brand i{font-style:normal;color:var(--gold)}.brand small{font:500 8px/1 var(--sans);letter-spacing:.24em;color:#81827e;margin-left:12px}.site-header nav{display:flex;gap:42px;margin:auto}.site-header nav a,.header-cta{font-size:11px;font-weight:600;letter-spacing:.15em;text-transform:uppercase}.site-header nav a{color:#bcbdb8}.site-header nav a:hover{color:var(--gold)}.header-cta{border:1px solid var(--gold);color:var(--gold);padding:13px 18px;transition:.25s}.header-cta:hover,.button.primary:hover{background:#dec18c;color:#080908}.menu-toggle{display:none}
+.hero{min-height:100vh;padding-top:190px;padding-bottom:72px;display:flex;flex-direction:column;justify-content:center;position:relative;z-index:1}.eyebrow{color:var(--gold);font-size:11px;font-weight:600;letter-spacing:.25em;text-transform:uppercase}.hero h1{font:500 clamp(58px,7.2vw,108px)/.98 var(--serif);letter-spacing:-.035em;margin:32px 0;color:var(--pale);max-width:1100px}.hero h1 em,.access h2 em{font-weight:500;color:var(--gold)}.hero-copy{max-width:670px;color:#b8b9b5;font-size:18px;line-height:1.75;margin:0}.hero-actions{display:flex;gap:14px;margin-top:42px}.button{display:inline-flex;align-items:center;justify-content:center;min-height:50px;padding:0 26px;font-size:11px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;transition:.25s}.button.primary{background:var(--gold);color:#080908}.button.secondary{border:1px solid rgba(255,255,255,.2);color:#ddd}.button.secondary:hover{border-color:var(--gold);color:var(--gold)}.button span{margin-left:22px}.signal-strip{margin-top:92px;border-top:1px solid var(--line);border-bottom:1px solid var(--line);display:grid;grid-template-columns:repeat(3,1fr)}.signal-strip div{padding:24px 30px;display:flex;gap:22px;align-items:center;border-right:1px solid var(--line)}.signal-strip div:last-child{border:0}.signal-strip b{color:var(--gold);font:500 13px var(--serif)}.signal-strip span{font-size:11px;line-height:1.55;color:#aaa;letter-spacing:.08em;text-transform:uppercase}
+section{position:relative;z-index:1}.network,.reach,.access{padding-top:140px;padding-bottom:140px}.section-intro{display:grid;grid-template-columns:1fr 1.25fr .75fr;gap:72px;align-items:start;margin-bottom:76px}.section-intro>div{display:flex;align-items:center;gap:16px}.section-number{font:500 11px var(--serif);color:#6f6250}.section-intro h2,.opportunity h2,.access h2,.confidentiality h2,.digital-layer h2,.closing h2{font:500 clamp(38px,4.2vw,62px)/1.12 var(--serif);letter-spacing:-.025em;margin:0;color:var(--pale)}.section-intro p,.opportunity-copy>p,.confidentiality p,.layer-copy>p{color:var(--muted);line-height:1.8;margin:0;font-size:15px}.principal-grid{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}.principal-grid article{padding:42px 32px 48px;border-right:1px solid var(--line);min-height:290px;transition:.3s}.principal-grid article:last-child{border:0}.principal-grid article:hover{background:rgba(207,176,121,.04)}.principal-grid article>span{color:#766b59;font:500 11px var(--serif)}.principal-grid h3{font:500 25px/1.25 var(--serif);margin:54px 0 18px}.principal-grid p{font-size:13px;color:#8e8f8b;line-height:1.7}
+.opportunity{display:grid;grid-template-columns:1.05fr .95fr;min-height:760px;padding-left:0}.opportunity-image{background:linear-gradient(90deg,transparent 60%,var(--ink)),linear-gradient(0deg,rgba(8,9,8,.65),transparent 55%),url('../images/grand-casino-beograd-card.jpg') center/cover;filter:saturate(.65)}.opportunity-copy{padding:110px 40px 90px 90px;align-self:center}.opportunity-copy .eyebrow{margin:22px 0}.opportunity-copy>p{margin:28px 0 42px}.opportunity ul{list-style:none;margin:0;padding:0;border-top:1px solid var(--line)}.opportunity li{display:flex;align-items:center;gap:25px;padding:20px 0;border-bottom:1px solid var(--line);font-size:13px;color:#d2d1cd}.opportunity li span{color:var(--gold);font:500 10px var(--serif)}
+.leadership{padding-top:140px;padding-bottom:140px;display:grid;grid-template-columns:.7fr 1.3fr;gap:100px;border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:linear-gradient(115deg,rgba(207,176,121,.045),transparent 42%)}.leadership-aside .eyebrow{margin:22px 0 48px}.representative-mark{width:190px;height:230px;border:1px solid var(--line);display:flex;align-items:center;justify-content:center;background:radial-gradient(circle,rgba(207,176,121,.13),#0c0d0b 70%);color:rgba(207,176,121,.38);font:500 110px var(--serif)}.identity-note{font-size:9px;line-height:1.6;text-transform:uppercase;letter-spacing:.13em;color:#62635f;margin-top:15px}.leadership-message{position:relative;padding-left:45px}.quote-mark{position:absolute;left:-20px;top:-55px;color:rgba(207,176,121,.18);font:500 140px/1 var(--serif)}.leadership-message h2{font:500 clamp(36px,3.8vw,56px)/1.2 var(--serif);letter-spacing:-.025em;color:var(--pale);margin:0 0 40px}.leadership-message>p{font-size:15px;line-height:1.85;color:#a4a5a0;max-width:760px;margin:0 0 20px}.signature-block{margin-top:48px;display:grid;grid-template-columns:70px auto;column-gap:18px;align-items:center}.signature-line{height:1px;background:var(--gold);grid-row:1/3}.signature-block strong{font:500 17px var(--serif);color:var(--pale)}.signature-block small{margin-top:5px;font-size:9px;text-transform:uppercase;letter-spacing:.15em;color:#747570}
+.section-intro.compact{grid-template-columns:.75fr 1.1fr .75fr}.reach{border-top:1px solid rgba(255,255,255,.05)}.reach-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}.reach-card{min-height:420px;border:1px solid var(--line);padding:28px;display:flex;flex-direction:column;justify-content:space-between;position:relative;overflow:hidden}.reach-card:after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,rgba(5,6,5,.94),rgba(5,6,5,.05) 70%);z-index:0}.reach-card>*{position:relative;z-index:1}.reach-card.georgia{background:url('https://eclipse.casino/wp-content/uploads/2023/03/4N8A0426-scaled.jpg') center/cover}.reach-card.serbia{background:url('../images/grand-casino-beograd-card.jpg') center/cover}.status{align-self:flex-start;border:1px solid rgba(207,176,121,.45);background:rgba(8,9,8,.6);padding:8px 10px;color:var(--gold);font-size:9px;font-weight:600;letter-spacing:.14em;text-transform:uppercase}.reach-card small{display:block;color:var(--gold);font-size:10px;font-weight:600;letter-spacing:.19em;text-transform:uppercase;margin-bottom:12px}.reach-card h3{font:500 31px/1.18 var(--serif);margin:0}.dark-card{background:radial-gradient(circle at 50% 40%,#242118,#10110f 60%)}.dark-card:after{background:linear-gradient(0deg,#090a09,transparent)}.monogram{position:absolute!important;inset:60px 0 auto;text-align:center;color:rgba(207,176,121,.11);font:600 140px var(--serif);letter-spacing:-.08em}.wide-card{grid-column:1/-1;min-height:330px;display:grid;grid-template-columns:1.1fr .9fr;background:#0e0f0d}.wide-card:after{display:none}.wide-card>div:first-child{align-self:end;max-width:650px}.wide-card .status{display:inline-block;margin-bottom:54px}.tech-lines{position:relative}.tech-lines i{position:absolute;width:260px;height:1px;background:linear-gradient(90deg,transparent,var(--gold));transform:rotate(-28deg);opacity:.3}.tech-lines i:nth-child(1){top:80px;left:20px}.tech-lines i:nth-child(2){top:145px;left:80px}.tech-lines i:nth-child(3){top:210px;left:140px}.reach-note{font-size:10px;color:#62635f;margin:18px 0 0;line-height:1.6}
+.access{display:grid;grid-template-columns:1fr 1fr;gap:110px;background:linear-gradient(100deg,rgba(207,176,121,.035),transparent)}.access-heading .eyebrow{margin:20px 0}.access-steps{list-style:none;padding:0;margin:0;border-top:1px solid var(--line)}.access-steps li{display:grid;grid-template-columns:52px 1fr;gap:20px;padding:26px 0;border-bottom:1px solid var(--line)}.access-steps b{font:500 11px var(--serif);color:var(--gold)}.access-steps h3{font:500 21px var(--serif);margin:0 0 8px}.access-steps p{font-size:13px;line-height:1.6;color:#888984;margin:0}.confidentiality{padding-top:110px;padding-bottom:110px;border:1px solid var(--line);display:grid;grid-template-columns:150px 1.2fr .7fr;gap:55px;align-items:center;background:#0d0e0c}.confidentiality .eyebrow{margin-bottom:19px}.confidentiality p{margin-top:25px;max-width:720px}.lock-mark{width:100px;height:100px;border:1px solid var(--line);border-radius:50%;position:relative}.lock-mark:before{content:"";position:absolute;width:26px;height:24px;border:1px solid var(--gold);left:36px;top:43px}.lock-mark:after{content:"";position:absolute;width:15px;height:17px;border:1px solid var(--gold);border-bottom:0;border-radius:12px 12px 0 0;left:41px;top:27px}.privacy-points{display:flex;flex-direction:column}.privacy-points span{font-size:11px;text-transform:uppercase;letter-spacing:.12em;color:#aaa;padding:16px 0;border-bottom:1px solid var(--line)}
+.digital-layer{padding-top:150px;padding-bottom:150px;display:grid;grid-template-columns:1.1fr .9fr;gap:100px}.digital-layer .eyebrow{margin-bottom:24px}.layer-copy{padding-top:35px}.layer-copy>p{font-size:16px}.layer-copy div{margin:34px 0;border-top:1px solid var(--line)}.layer-copy span{display:block;padding:16px 0;border-bottom:1px solid var(--line);color:var(--pale);font-size:12px;text-transform:uppercase;letter-spacing:.13em}.layer-copy .fine{font-size:11px;color:#666;line-height:1.7}.closing{text-align:center;padding-top:150px;padding-bottom:150px;border-top:1px solid var(--line);background:radial-gradient(circle at center,rgba(207,176,121,.07),transparent 56%)}.closing h2{margin:25px 0}.closing p{color:#92938e;margin:0 auto 36px;max-width:600px;line-height:1.7}
+footer{min-height:190px;border-top:1px solid rgba(255,255,255,.07);display:grid;grid-template-columns:auto 1fr auto;gap:32px;align-items:center;color:#6e6f6a}footer p{font-size:10px;text-transform:uppercase;letter-spacing:.15em}footer>div{display:flex;gap:24px;font-size:10px;text-transform:uppercase;letter-spacing:.12em}footer small{grid-column:1/-1;border-top:1px solid rgba(255,255,255,.05);padding-top:18px;font-size:9px}.reveal{opacity:0;transform:translateY(28px);transition:opacity .8s ease,transform .8s ease}.reveal.visible{opacity:1;transform:none}
+footer address{grid-column:1/-1;color:#777872;font-size:12px;line-height:1.7;font-style:normal;margin-top:4px}
 
-.gold-text {
-  background: linear-gradient(to right, #c5a880, #fcf6ba, #aa771c);
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
-}
+/* Editorial refinement: tighter institutional measure and clearer public information hierarchy */
+.section-shell{max-width:1180px;padding-left:48px;padding-right:48px}
+.site-header{padding-left:max(32px,calc((100vw - 1180px)/2 + 48px));padding-right:max(32px,calc((100vw - 1180px)/2 + 48px))}
+.hero h1{font-size:clamp(54px,6.2vw,86px);max-width:1040px;line-height:1.06}
+.hero-copy{max-width:690px}
+.capabilities{padding-top:128px;padding-bottom:128px}
+.capabilities-intro{display:grid;grid-template-columns:.7fr 1.15fr .85fr;gap:58px;align-items:start;margin-bottom:62px}
+.capabilities-intro>div{display:flex;align-items:center;gap:16px}
+.capabilities-intro h2,.framework-panel h2{font:500 clamp(38px,4.2vw,56px)/1.14 var(--serif);letter-spacing:-.025em;color:var(--pale);margin:0}
+.capabilities-intro>p,.framework-panel>p{font-size:16px;line-height:1.8;color:#a9aaa5;margin:0}
+.capabilities-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));border-top:1px solid var(--line);border-left:1px solid var(--line)}
+.capabilities-grid article{min-height:265px;padding:34px 38px 38px;border-right:1px solid var(--line);border-bottom:1px solid var(--line);transition:transform .28s ease,background .28s ease,border-color .28s ease}
+.capabilities-grid article:hover{transform:translateY(-4px);background:rgba(197,168,128,.045);border-color:rgba(197,168,128,.36)}
+.capabilities-grid article>span{font:500 12px var(--serif);color:#8b795d}
+.capabilities-grid h3{font:500 27px/1.25 var(--serif);color:var(--pale);margin:42px 0 14px}
+.capabilities-grid p{font-size:15px;line-height:1.75;color:#969791;max-width:470px;margin:0}
+.private-framework{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0;padding-top:120px;padding-bottom:120px;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.framework-panel{padding:8px 60px 8px 0}
+.framework-panel+ .framework-panel{padding-left:60px;padding-right:0;border-left:1px solid var(--line)}
+.framework-panel h2{font-size:clamp(34px,3.4vw,46px);margin:17px 0 24px}
+.framework-panel>p{max-width:520px}
+.framework-points{display:flex;flex-direction:column;gap:13px;margin-top:30px}
+.framework-points span{display:flex;align-items:center;gap:13px;font-size:14px;color:#aaa69c}
+.framework-points span:before{content:"";width:5px;height:5px;flex:0 0 auto;border-radius:50%;background:var(--gold)}
+.framework-fine{font-size:13px!important;color:#77786f!important;border-top:1px solid var(--line);padding-top:20px;margin-top:28px!important}
+.reveal{opacity:.12;transform:translateY(18px)}
+@media(prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}.capabilities-grid article{transition:none}}
+@media(max-width:900px){.capabilities-intro{grid-template-columns:1fr;gap:24px}.private-framework{grid-template-columns:1fr}.framework-panel{padding:0 0 60px}.framework-panel+ .framework-panel{padding:60px 0 0;border-left:0;border-top:1px solid var(--line)}}
+@media(max-width:700px){.section-shell{padding-left:22px;padding-right:22px}.hero h1{font-size:clamp(40px,11.2vw,52px)}.capabilities{padding-top:86px;padding-bottom:86px}.capabilities-grid{grid-template-columns:1fr}.capabilities-grid article{min-height:0;padding:30px 26px 34px}.capabilities-grid h3{font-size:25px;margin-top:28px}.capabilities-grid p{font-size:16px}.private-framework{padding-top:82px;padding-bottom:82px}.framework-panel h2{font-size:34px}.framework-panel>p{font-size:16px}.framework-points span{font-size:14px}}
+@media(max-width:900px){.section-shell{padding-left:28px;padding-right:28px}.site-header{padding:0 28px;height:74px}.brand small,.header-cta{display:none}.menu-toggle{display:block;margin-left:auto;border:0;background:none;width:35px;height:35px;padding:7px}.menu-toggle span{display:block;height:1px;background:#ddd;margin:7px 0}.site-header nav{display:none;position:absolute;top:74px;left:0;right:0;padding:24px 28px;background:#0b0c0b;border-bottom:1px solid var(--line);flex-direction:column;gap:22px}.site-header nav.open{display:flex}.hero{padding-top:140px;min-height:auto}.hero h1{font-size:clamp(48px,12vw,74px)}.signal-strip{grid-template-columns:1fr;margin-top:70px}.signal-strip div{border-right:0;border-bottom:1px solid var(--line)}.signal-strip div:last-child{border-bottom:0}.section-intro,.section-intro.compact{grid-template-columns:1fr;gap:28px}.principal-grid{grid-template-columns:1fr 1fr}.principal-grid article:nth-child(2){border-right:0}.principal-grid article:nth-child(-n+2){border-bottom:1px solid var(--line)}.leadership{grid-template-columns:1fr;gap:60px}.representative-mark{width:150px;height:180px}.leadership-message{padding-left:25px}.opportunity{grid-template-columns:1fr;padding:0}.opportunity-image{min-height:430px;background-image:linear-gradient(0deg,var(--ink),transparent 50%),url('../images/grand-casino-beograd-card.jpg')}.opportunity-copy{padding:70px 28px}.access,.digital-layer{grid-template-columns:1fr;gap:60px}.confidentiality{grid-template-columns:100px 1fr}.privacy-points{grid-column:1/-1}.wide-card{grid-template-columns:1fr}.tech-lines{display:none}}
+@media(max-width:600px){.section-shell{padding-left:20px;padding-right:20px}.site-header{padding:0 20px}.hero{padding-top:125px;padding-bottom:48px}.hero h1{font-size:45px;line-height:1.04;margin:25px 0}.hero-copy{font-size:15px}.hero-actions{flex-direction:column}.button{width:100%}.signal-strip{margin-top:55px}.network,.reach,.access{padding-top:92px;padding-bottom:92px}.section-intro{margin-bottom:48px}.section-intro h2,.opportunity h2,.access h2,.confidentiality h2,.digital-layer h2,.closing h2{font-size:38px}.principal-grid{grid-template-columns:1fr}.principal-grid article{border-right:0;border-bottom:1px solid var(--line)!important;min-height:auto;padding:30px 20px}.principal-grid h3{margin-top:28px}.leadership{padding-top:90px;padding-bottom:90px;gap:50px}.representative-mark{width:125px;height:150px;font-size:72px}.leadership-message{padding-left:0}.quote-mark{left:-8px;top:-45px}.leadership-message h2{font-size:35px}.opportunity-image{min-height:300px}.reach-grid{grid-template-columns:1fr}.reach-card{min-height:350px}.wide-card{grid-column:auto}.confidentiality{margin:0 20px;padding:55px 25px;grid-template-columns:1fr}.digital-layer{padding-top:95px;padding-bottom:95px}.closing{padding-top:100px;padding-bottom:100px}footer{grid-template-columns:1fr;padding-top:48px;padding-bottom:38px}footer>div,footer small{grid-column:1}.reach-card h3{font-size:27px}}
+@media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important}.ambient{display:none}.reveal{opacity:1;transform:none;transition:none}}
 
-.text-casino-gold {
-  color: #c5a880;
-}
+/* Editorial direction - restrained, continental, and deliberately non-promotional. */
+:root{--ink:#0d0e0d;--panel:#131412;--line:rgba(235,231,219,.16);--gold:#b8ad8f;--pale:#e8e5db;--muted:#a5a49e}
+body{background:#0d0e0d;font-family:'DM Sans',Arial,sans-serif;letter-spacing:-.005em}.ambient{background:none}.ambient span{display:none}
+.site-header{height:74px;background:rgba(13,14,13,.96);backdrop-filter:none;border-color:var(--line)}.brand{font-family:'DM Sans',sans-serif;font-size:19px;font-weight:600;letter-spacing:.04em}.brand i{color:#c5a880}.brand small{color:#777872;font-size:7px}.site-header nav{gap:34px}.site-header nav a,.header-cta{font-size:10px;letter-spacing:.1em}.header-cta{border-color:#c6c3b8;color:#e1ded4;padding:11px 16px}.header-cta:hover,.button.primary:hover{background:#e5e1d5;color:#0d0e0d}
+.hero{min-height:93vh;padding-top:170px;padding-bottom:58px}.hero .eyebrow{margin-left:2px}.eyebrow{color:#9d9a8e;font-size:10px;letter-spacing:.16em}.hero h1{max-width:980px;font-family:'DM Sans',sans-serif;font-size:clamp(62px,7.6vw,116px);font-weight:300;line-height:.98;letter-spacing:-.06em;margin:34px 0 38px}.hero h1 em{font-family:var(--serif);font-weight:500;color:var(--pale)}.hero-copy{font-size:17px;max-width:600px;color:#aaa9a2}.button{font-size:10px;letter-spacing:.1em;min-height:47px}.button.primary{background:#e4e0d4}.button.secondary{border-color:var(--line)}.signal-strip{margin-top:84px}.signal-strip div{padding:22px 2px 22px 24px;display:block}.signal-strip b{display:block;color:#e1ded3;font:500 10px 'DM Sans',sans-serif;text-transform:uppercase;letter-spacing:.11em;margin-bottom:11px}.signal-strip span{font-size:10px;letter-spacing:.035em;text-transform:none;color:#858680}
+.network,.reach,.access{padding-top:125px;padding-bottom:125px}.section-intro{grid-template-columns:.65fr 1.25fr .8fr;gap:64px;margin-bottom:65px}.section-number{font-family:'DM Sans',sans-serif;color:#71716c}.section-intro h2,.opportunity h2,.access h2,.confidentiality h2,.digital-layer h2,.closing h2{font-family:'DM Sans',sans-serif;font-weight:300;letter-spacing:-.045em}.principal-grid article{padding:35px 25px 40px;min-height:250px}.principal-grid article:hover{background:transparent}.principal-grid h3{font-family:'DM Sans',sans-serif;font-weight:400;font-size:22px;letter-spacing:-.025em;margin-top:44px}.principal-grid p{color:#898a84}
+.leadership{padding-top:125px;padding-bottom:125px;background:none;grid-template-columns:.62fr 1.38fr;border-color:var(--line)}.leadership-message{padding-left:0}.quote-mark{display:none}.leadership-message h2{font-family:var(--serif);font-size:clamp(38px,4.2vw,62px);font-weight:500;line-height:1.16;letter-spacing:-.035em}.representative-mark{background:#181916;border-color:var(--line);font-family:'DM Sans',sans-serif;font-weight:300;color:#65655e}.signature-line{background:#8e8b80}
+.opportunity{min-height:700px}.opportunity-image{filter:grayscale(.5) contrast(.9);background-image:linear-gradient(90deg,transparent 72%,var(--ink)),url('../images/grand-casino-beograd-card.jpg')}.opportunity-copy{padding-left:78px}.opportunity li{font-size:12px}.reach-card{border-color:var(--line);padding:24px}.reach-card:after{background:linear-gradient(0deg,rgba(10,11,10,.93),rgba(10,11,10,.08) 70%)}.reach-card.georgia,.reach-card.serbia{filter:grayscale(.28) saturate(.65)}.reach-card>*{filter:none}.status{border-color:rgba(235,231,219,.3);background:rgba(13,14,13,.8);color:#d3d0c6}.reach-card h3{font-family:'DM Sans',sans-serif;font-size:27px;font-weight:300;letter-spacing:-.035em}.reach-card small{color:#b4b0a2}.monogram{font-family:'DM Sans',sans-serif;color:rgba(235,231,219,.07)}.wide-card{background:#141513}.tech-lines i{background:linear-gradient(90deg,transparent,#aaa79b)}
+.access{background:none}.access-heading h2{max-width:450px}.access-steps h3{font-family:'DM Sans',sans-serif;font-size:18px;font-weight:400}.confidentiality{background:#121311}.lock-mark{border-radius:0}.digital-layer{padding-top:130px;padding-bottom:130px}.layer-copy span{letter-spacing:.08em}.closing{background:none;padding-top:125px;padding-bottom:125px}.closing h2{font-size:clamp(54px,6vw,86px)}
+.reveal{transform:translateY(14px);transition-duration:.55s}
+@media(max-width:900px){.hero{padding-top:135px}.hero h1{font-size:clamp(55px,11vw,82px)}.section-intro{grid-template-columns:1fr}.leadership{grid-template-columns:1fr}.opportunity-copy{padding-left:28px}}
+@media(max-width:600px){.hero h1{font-size:48px;line-height:1.02}.hero-copy{font-size:15px}.signal-strip div{padding-left:0}.leadership-message h2{font-size:38px}.closing h2{font-size:51px}}
 
-.bg-casino-gold {
-  background-color: #c5a880;
-}
+/* Brand warmth - muted gold and mineral tones, used with restraint. */
+:root{--gold:#c5a880;--line:rgba(197,168,128,.22);--panel:#151611}
+body{background:linear-gradient(180deg,#0d0e0d 0%,#10110e 46%,#0d0e0d 100%)}
+.ambient{background:radial-gradient(circle at 82% 8%,rgba(135,107,61,.11),transparent 31%),radial-gradient(circle at 5% 55%,rgba(69,75,51,.12),transparent 28%)}
+.eyebrow{color:#c5a880}.section-number{color:#9b825d}.hero h1 em{color:#d2b983}.header-cta{border-color:#a88d61;color:#d0b98f}.header-cta:hover,.button.primary:hover{background:#c5a880}.button.primary{background:#c9b184}.button.secondary:hover{border-color:#b89a69;color:#d0b98f}
+.signal-strip{border-color:rgba(197,168,128,.26)}.signal-strip div{border-color:rgba(197,168,128,.16)}.signal-strip b{color:#cdb788}.signal-strip div:first-child{background:linear-gradient(90deg,rgba(197,168,128,.055),transparent)}
+.network{background:linear-gradient(110deg,rgba(61,66,43,.07),transparent 42%)}.principal-grid article:nth-child(2),.principal-grid article:nth-child(4){background:rgba(197,168,128,.018)}.principal-grid article>span,.opportunity li span,.access-steps b{color:#b99b6b}
+.leadership{background:linear-gradient(115deg,rgba(83,74,50,.13),transparent 45%)}.representative-mark{background:radial-gradient(circle at 50% 38%,rgba(197,168,128,.14),#151611 68%);color:rgba(197,168,128,.5)}.leadership-message h2{color:#eee7d8}.signature-line{background:#b99b6b}
+.opportunity-copy{background:linear-gradient(90deg,rgba(75,78,52,.055),transparent)}.reach{background:radial-gradient(circle at 95% 18%,rgba(124,91,51,.08),transparent 27%)}.status{border-color:rgba(197,168,128,.5);color:#d3b98a}.reach-card small{color:#c2a878}.dark-card{background:radial-gradient(circle at 50% 38%,#28251b,#12130f 63%)}.wide-card{background:linear-gradient(105deg,#161711,#11120f)}
+.access{background:linear-gradient(110deg,transparent 42%,rgba(91,82,56,.07))}.confidentiality{background:linear-gradient(120deg,#171811,#11120f)}.lock-mark:before,.lock-mark:after{border-color:#c5a880}.privacy-points span:first-child{color:#c7b28c}
 
-.hover\:text-casino-gold:hover {
-  color: #c5a880;
-}
+/* Considered interaction details. */
+.site-header nav a{position:relative;padding:28px 0 24px}.site-header nav a::after{content:'';position:absolute;left:0;bottom:19px;width:72%;height:1px;background:#c5a880;transform:scaleX(0);transform-origin:right;transition:transform .26s cubic-bezier(.22,.61,.36,1)}.site-header nav a:hover::after,.site-header nav a[aria-current="true"]::after{transform:scaleX(1);transform-origin:left}.site-header nav a[aria-current="true"]{color:#d9c49d}
+.button,.header-cta{position:relative;transition:background-color .22s ease,color .22s ease,border-color .22s ease,transform .16s ease,box-shadow .22s ease}.button:hover,.header-cta:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(0,0,0,.2)}.button:active,.header-cta:active{transform:translateY(1px);box-shadow:none}.button span{display:inline-block;transition:transform .22s ease}.button:hover span{transform:translate(2px,-2px)}.button:focus-visible,.header-cta:focus-visible,.site-header nav a:focus-visible,.reach-card:focus-visible{outline:1px solid #d1b781;outline-offset:4px}
+.reach-card{transition:transform .3s cubic-bezier(.22,.61,.36,1),border-color .3s ease,box-shadow .3s ease,filter .3s ease;will-change:transform}.reach-card:hover{transform:translateY(-4px);border-color:rgba(197,168,128,.52);box-shadow:0 18px 42px rgba(0,0,0,.28)}.reach-card.image-card:hover{filter:grayscale(.08) saturate(.82) contrast(1.01)}.reach-card .status{transition:color .22s ease,border-color .22s ease,background-color .22s ease}.reach-card:hover .status{color:#e0c795;border-color:rgba(197,168,128,.7);background:rgba(13,14,13,.9)}.reach-card h3,.reach-card small{transition:transform .3s cubic-bezier(.22,.61,.36,1),color .25s ease}.reach-card:hover h3{transform:translateY(-2px)}.reach-card:hover small{color:#d3bc90}
+.js .principal-grid article,.js .reach-grid .reach-card{opacity:0;transform:translateY(12px)}.js .reveal.visible .principal-grid article,.js .reveal.visible .reach-grid .reach-card{opacity:1;transform:none;transition:opacity .48s ease,transform .48s cubic-bezier(.22,.61,.36,1),border-color .3s ease,box-shadow .3s ease,filter .3s ease;transition-delay:var(--stagger,0ms)}.js .reveal.visible .reach-grid .reach-card:hover{transform:translateY(-4px);transition-delay:0ms}
+.signature-line{transform:scaleX(0);transform-origin:left;transition:transform .75s cubic-bezier(.22,.61,.36,1) .18s}.leadership.visible .signature-line{transform:scaleX(1)}
+@media(max-width:900px){.site-header nav a{padding:0}.site-header nav a::after{bottom:-7px}.reach-card:hover{transform:none}.js .reveal.visible .reach-grid .reach-card:hover{transform:none}}
+@media(prefers-reduced-motion:reduce){.site-header nav a::after,.button,.header-cta,.reach-card,.reach-card h3,.reach-card small,.signature-line{transition:none!important}.js .principal-grid article,.js .reach-grid .reach-card{opacity:1;transform:none}.signature-line{transform:none}}
 
-.bg-casino-gold\/5 {
-  background-color: rgba(197, 168, 128, 0.05);
-}
+/* Local strategic-reach imagery: stable, consistent 900x576 source assets. */
+.reach-card.georgia{background-image:url('../images/vasino-eclipse-card.jpg')}
+.reach-card.serbia{background-image:url('../images/grand-casino-beograd-card.jpg')}
+.reach-card.vip-card{background-image:url('../images/vip-junket-rooms-card.jpg')}
+.reach-card.forex-card{background-image:url('../images/some-casino-forex-card.jpg')}
+.reach-card.ocean-card{background-image:url('../images/ocean-star-sez-casino-card.jpg')}
+.reach-card.technology-card{background-image:url('../images/longrise-ai-systems-card.jpg')}
+.reach-card.image-card{background-position:center;background-size:cover;background-repeat:no-repeat;filter:grayscale(.18) saturate(.78)}
+.leadership{align-items:start}.leadership-message{display:block;align-self:start;visibility:visible}.leadership-message>p{max-width:720px}.leadership-aside{align-self:start}
 
-.group:hover .group-hover\:bg-casino-gold\/10 {
-  background-color: rgba(197, 168, 128, 0.1);
-}
+/* Asymmetric partner layout: editorial hierarchy rather than equal tiles. */
+.reach-grid{grid-template-columns:repeat(12,minmax(0,1fr));gap:16px}
+.reach-card.georgia{grid-column:span 7;min-height:470px}
+.reach-card.serbia{grid-column:span 5;min-height:470px}
+.reach-card.vip-card,.reach-card.forex-card,.reach-card.ocean-card{grid-column:span 4;min-height:350px}
+.reach-card.featured-card{grid-column:1/-1;min-height:500px;background-image:url('../images/longrise-ai-systems-card.jpg');background-position:center top;filter:saturate(.82);text-decoration:none}
+.reach-card.featured-card:after{background:linear-gradient(90deg,rgba(9,10,8,.1),rgba(9,10,8,.08) 45%,rgba(9,10,8,.78)),linear-gradient(0deg,rgba(9,10,8,.86),transparent 56%)}
+.reach-card.featured-card>div{max-width:560px}.reach-card.featured-card h3{font-size:36px}.reach-card.featured-card:hover{filter:saturate(1)}
+@media(max-width:900px){.reach-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.reach-card.georgia,.reach-card.serbia,.reach-card.vip-card,.reach-card.forex-card,.reach-card.ocean-card{grid-column:span 1;min-height:380px}.reach-card.featured-card{grid-column:1/-1;min-height:430px}}
+@media(max-width:600px){.reach-grid{grid-template-columns:1fr}.reach-card.georgia,.reach-card.serbia,.reach-card.vip-card,.reach-card.forex-card,.reach-card.ocean-card,.reach-card.featured-card{grid-column:1;min-height:340px}.reach-card.featured-card{background-position:center top}.reach-card.featured-card h3{font-size:28px}}
 
-.hover\:border-casino-gold\/30:hover {
-  border-color: rgba(197, 168, 128, 0.3);
-}
+/* Leadership reads as a complete statement even before a portrait is supplied. */
+.leadership{display:block;padding-top:110px;padding-bottom:110px}.leadership-header{display:grid;grid-template-columns:1fr auto;gap:60px;align-items:start;margin-bottom:64px;padding-bottom:34px;border-bottom:1px solid var(--line)}.leadership-header>div:first-child{display:flex;align-items:center;gap:20px}.leadership-header .eyebrow{margin:0}.representative-meta{display:flex;align-items:center;gap:18px}.representative-mark{width:72px;height:72px;font-size:38px;flex:0 0 auto}.identity-note{margin:0;min-width:240px}.leadership-message{max-width:1040px;margin-left:auto;padding:0}.leadership-message h2{max-width:950px}.leadership-message>p{max-width:820px;font-size:17px;line-height:1.85}.signature-block{max-width:440px}
+@media(max-width:700px){.leadership-header{grid-template-columns:1fr;gap:28px;margin-bottom:44px}.leadership-header>div:first-child{align-items:flex-start;flex-direction:column;gap:12px}.representative-mark{width:58px;height:58px;font-size:30px}.identity-note{min-width:0}.leadership-message>p{font-size:16px}}
 
-.casino-card {
-  background: rgba(20, 20, 20, 0.92);
-  border: 1px solid rgba(197, 168, 128, 0.18);
-  overflow: hidden;
-  transition: all 0.35s ease;
-}
+/* Final typography floor for high-density desktop displays. */
+.eyebrow,.signal-strip b,.signal-strip span,.principal-grid article>span,.section-number,.status,.reach-card small,.reach-note,.identity-note,.signature-block small,.access-steps b,.privacy-points span,.layer-copy .fine,footer p,footer>div{font-size:14px;line-height:1.55}.site-header nav a,.header-cta{font-size:13px}.brand small{font-size:11px}.reach-note,.layer-copy .fine,footer small{font-size:12px;line-height:1.75}
+@media(max-width:600px){.eyebrow,.signal-strip b,.signal-strip span,.principal-grid article>span,.section-number,.status,.reach-card small,.reach-note,.identity-note,.signature-block small,.access-steps b,.privacy-points span,.layer-copy .fine,footer p,footer>div,footer small{font-size:14px}}
 
-.casino-card:hover {
-  border-color: rgba(197, 168, 128, 0.75);
-  transform: translateY(-8px);
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.85), 0 0 22px rgba(197, 168, 128, 0.16);
-}
+/* Definitive representative layout: visible portrait and message in one flow. */
+.leadership-header{grid-template-columns:1fr;margin-bottom:50px}.leadership-body{display:grid;grid-template-columns:minmax(280px,390px) minmax(0,1fr);gap:72px;align-items:start}.representative-portrait{margin:0;position:relative}.representative-portrait img{display:block;width:100%;aspect-ratio:4/5;object-fit:cover;object-position:center 20%;filter:saturate(.78) contrast(.96);border:1px solid var(--line)}.representative-portrait figcaption{font-size:12px;line-height:1.6;color:#8f9089;margin-top:13px}.leadership-message{max-width:none;margin:0}.leadership-message h2{font-size:clamp(40px,4.1vw,62px);margin-bottom:34px}.leadership-message>p{font-size:17px;line-height:1.8;color:#b0b1aa}.leadership.visible .leadership-message{opacity:1;visibility:visible}
 
-.linked-card {
-  cursor: pointer;
-}
+/* Mobile typography is sized for reading, not merely fitting. */
+@media(max-width:700px){body{font-size:16px}.section-shell{padding-left:22px;padding-right:22px}.hero{padding-top:120px}.hero h1{font-size:clamp(42px,12vw,56px);line-height:1.03}.hero-copy{font-size:17px;line-height:1.65}.button{min-height:52px;font-size:14px}.signal-strip span{font-size:15px}.section-intro h2,.opportunity h2,.access h2,.confidentiality h2,.digital-layer h2{font-size:36px;line-height:1.12}.section-intro p,.opportunity-copy>p,.confidentiality p,.layer-copy>p{font-size:16px;line-height:1.72}.principal-grid h3{font-size:24px}.principal-grid p{font-size:16px;line-height:1.68}.leadership{padding-top:82px;padding-bottom:82px}.leadership-body{grid-template-columns:1fr;gap:42px}.representative-portrait{max-width:430px}.representative-portrait figcaption{font-size:13px}.leadership-message h2{font-size:36px;line-height:1.16}.leadership-message>p{font-size:17px;line-height:1.78}.opportunity li{font-size:15px;line-height:1.55}.reach-card h3{font-size:27px}.reach-card small,.status{font-size:13px}.access-steps h3{font-size:21px}.access-steps p{font-size:16px;line-height:1.65}.privacy-points span,.layer-copy span{font-size:14px}.closing h2{font-size:46px}.closing p{font-size:16px;line-height:1.65}footer p,footer>div,footer small{font-size:13px}.site-header nav a{font-size:15px}}
 
-.linked-card:focus-visible {
-  outline: 2px solid #c5a880;
-  outline-offset: 4px;
-}
+/* Readability floor: no public-facing copy below a practical reading size. */
+.eyebrow,.site-header nav a,.header-cta,.signal-strip b,.signal-strip span,.principal-grid article>span,.section-number,.status,.reach-card small,.reach-note,.identity-note,.signature-block small,.access-steps b,.privacy-points span,.layer-copy .fine,footer p,footer>div,footer small{font-size:12px}
+.eyebrow,.status,.reach-card small,.identity-note,.signature-block small,.privacy-points span,footer p,footer>div{letter-spacing:.09em}
+.reach-note,.layer-copy .fine,footer small{line-height:1.7;color:#898a83}
+.brand small{font-size:10px;letter-spacing:.14em}
+@media(max-width:600px){.eyebrow,.signal-strip b,.signal-strip span,.section-number,.status,.reach-card small,.reach-note,.identity-note,.signature-block small,.access-steps b,.privacy-points span,.layer-copy .fine,footer p,footer>div,footer small{font-size:13px}.site-header nav a{font-size:13px}}
+.digital-layer{background:radial-gradient(circle at 0% 80%,rgba(76,82,52,.09),transparent 28%)}.layer-copy span:before{content:'-';color:#a98e61;margin-right:13px}.closing{background:radial-gradient(circle at center,rgba(117,91,51,.11),transparent 55%)}.closing .eyebrow{color:#c5a880}
 
-.img-overlay {
-  background: linear-gradient(to top, rgba(10, 10, 10, 0.72) 0%, rgba(10, 10, 10, 0.18) 44%, transparent 100%);
-}
+/* Final editorial scale overrides */
+.hero h1{font-size:clamp(54px,6.2vw,86px);line-height:1.06;max-width:1040px}
+@media(max-width:700px){.hero h1{font-size:clamp(40px,11.2vw,52px);line-height:1.04}}
 
-.glow-button {
-  box-shadow: 0 0 15px rgba(197, 168, 128, 0.26);
-  transition: all 0.25s ease;
-}
-
-.glow-button:hover {
-  box-shadow: 0 0 24px rgba(197, 168, 128, 0.5);
-  transform: scale(1.02);
-}
-
-@keyframes floatUp {
-  0% {
-    transform: translateY(110vh) scale(0);
-    opacity: 0;
-  }
-
-  12% {
-    opacity: 0.55;
-  }
-
-  80% {
-    opacity: 0.55;
-  }
-
-  100% {
-    transform: translateY(-10vh) scale(1.4);
-    opacity: 0;
-  }
-}
-
-.gold-dust {
-  position: absolute;
-  background: #c5a880;
-  border-radius: 9999px;
-  animation: floatUp linear infinite;
-  box-shadow: 0 0 9px 1px rgba(197, 168, 128, 0.55);
-}
-
-.dust-1 {
-  left: 5%;
-  width: 2px;
-  height: 2px;
-  animation-duration: 8s;
-  animation-delay: -2s;
-}
-
-.dust-2 {
-  left: 12%;
-  width: 3px;
-  height: 3px;
-  animation-duration: 11s;
-  animation-delay: -8s;
-}
-
-.dust-3 {
-  left: 18%;
-  width: 2px;
-  height: 2px;
-  animation-duration: 9s;
-  animation-delay: -5s;
-}
-
-.dust-4 {
-  left: 25%;
-  width: 4px;
-  height: 4px;
-  animation-duration: 13s;
-  animation-delay: -10s;
-}
-
-.dust-5 {
-  left: 33%;
-  width: 2px;
-  height: 2px;
-  animation-duration: 10s;
-  animation-delay: -4s;
-}
-
-.dust-6 {
-  left: 41%;
-  width: 3px;
-  height: 3px;
-  animation-duration: 12s;
-  animation-delay: -9s;
-}
-
-.dust-7 {
-  left: 50%;
-  width: 2px;
-  height: 2px;
-  animation-duration: 8s;
-  animation-delay: -6s;
-}
-
-.dust-8 {
-  left: 58%;
-  width: 3px;
-  height: 3px;
-  animation-duration: 14s;
-  animation-delay: -12s;
-}
-
-.dust-9 {
-  left: 66%;
-  width: 2px;
-  height: 2px;
-  animation-duration: 9s;
-  animation-delay: -3s;
-}
-
-.dust-10 {
-  left: 74%;
-  width: 4px;
-  height: 4px;
-  animation-duration: 13s;
-  animation-delay: -7s;
-}
-
-.dust-11 {
-  left: 82%;
-  width: 2px;
-  height: 2px;
-  animation-duration: 10s;
-  animation-delay: -5s;
-}
-
-.dust-12 {
-  left: 90%;
-  width: 3px;
-  height: 3px;
-  animation-duration: 12s;
-  animation-delay: -11s;
-}
-
-.dust-13 {
-  left: 96%;
-  width: 2px;
-  height: 2px;
-  animation-duration: 8s;
-  animation-delay: -1s;
-}
-
-@keyframes pulseGlow {
-  0%,
-  100% {
-    opacity: 0.22;
-    transform: scale(0.95);
-  }
-
-  50% {
-    opacity: 0.42;
-    transform: scale(1.05);
-  }
-}
-
-.center-glow {
-  animation: pulseGlow 7s ease-in-out infinite;
-}
-
-@media (max-width: 768px) {
-  h1 {
-    font-size: 2.65rem !important;
-    line-height: 1.15 !important;
-  }
-
-  .hero-stats {
-    font-size: 2rem !important;
-  }
-
-  .mobile-readable {
-    font-size: 13px !important;
-    letter-spacing: 0.08em !important;
-  }
-
-  .gold-dust:nth-child(n+12) {
-    display: none;
-  }
-}
