@@ -6,6 +6,7 @@
 - `source/`의 PNG 4개: 원본 ZIP에서 추출한 파일이며 파일명과 바이트를 그대로 보존했습니다.
 - `token/CNYT-ticker-gold.png`: 원본 중 금색 심벌 단독 이미지(`ChatGPT Image 2026년 9월 10일 오후 03_13_57.png`)를 바탕으로 2026-10-12에 AI 이미지 편집으로 만든 파생 티커 이미지입니다. 금색 심벌 형태를 참고해 잔여 점과 가장자리를 정리하고 차콜 배경을 적용했습니다. 1254×1254 RGB PNG.
 - `token/CNYT-ticker-gold-256.png`: 위 마스터를 Lanczos 리샘플링으로 256×256 크기로만 축소한 PNG입니다.
+- `token/CNYT-ticker-gold-200.png`: 사용자가 알려 준 최대 200×200 규격에 맞춰 마스터를 Lanczos 리샘플링으로 크기만 축소한 RGB PNG입니다. 35,086바이트이며 디자인 변경은 없습니다.
 
 이 폴더는 자산 보관용입니다. 기존 사이트 파일, 토큰 등록 정보 및 거래 설정을 변경하지 않습니다.
 
@@ -22,3 +23,4 @@
 | `source/사무실 로고 아크릴 부착 예시.png` | 457588 | `4ce5528b00c7865362cbc54a8844630580bd40fd7672822ed1d4a17ec9256ea4` |
 | `token/CNYT-ticker-gold.png` | 1278845 | `a64cd1a517c5f5433b1a93c631b702e82499f3b2f2e22ef1ff1722ce2bc72056` |
 | `token/CNYT-ticker-gold-256.png` | 56320 | `59382647a51ac18b504599a44f602ee438a684abab354ccc2846db2830428fcb` |
+| `token/CNYT-ticker-gold-200.png` | 35086 | `f64b7ee151cd6aecc94aed2abaf63858475c77989a8d1f3d4edbb7b1df8398e0` |
